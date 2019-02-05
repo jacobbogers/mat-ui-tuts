@@ -6,7 +6,7 @@ const { resolve } = require('path')
 
 module.exports = function () {
 
-    const id = Math.random()
+    const id = 5 //Math.random()
 
     const rc = {
         mode: 'development',
@@ -55,7 +55,19 @@ module.exports = function () {
         },
         plugins: [
             new HtmlWebPackPlugin({
-                title:'📖 👨‍🎓 tutorial'
+                title:'📖 👨‍🎓 tutorial',
+                meta: {
+                    viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+                },
+                hash: true,
+                showErrors: true,
+                xhtml: true,
+                //template configuration
+                template: require('html-webpack-template'),
+                inject: false, //inject assets into the given template  = false (template has own logic, leave it alone)
+                appMountId: 'app', // create a <div id="app"></div> for app mounting
+                appMountHtmlSnippet: '<div class="app-spinner"><i class="fa fa-spinner fa-spin fa-5x" aria-hidden="true"></i></div>',
+                //appMountIds: ['zip','zap']
             }),
             new CleanWebpackPlugin(['dist'],
             { 
@@ -66,7 +78,27 @@ module.exports = function () {
                 filename: "[name].css",
                 chunkFilename: "[id].css"
             }),
-            new FaviconsWebpackPlugin('./favicon.png')
+            new FaviconsWebpackPlugin({
+                logo: './favicon.png',
+                prefix: 'icons-[hash]/',
+                emitStats: true,
+                persistentCache: true,
+                inject: true,
+                background:'#fff',
+                title: '📖 👨‍🎓 tutorial',
+                icons:{
+                    android: true,
+                    appleIcon: true,
+                    appleStartup: true,
+                    coast: false,
+                    favicons: true,
+                    firefox: true,
+                    opengraph: false,
+                    twitter: false,
+                    yandex: false,
+                    windows: false
+                }
+            })
         ]
     }
     return rc
