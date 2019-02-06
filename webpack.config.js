@@ -3,23 +3,25 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const InlineManifestWebpackPlugin = require("inline-manifest-webpack-plugin");
-const ManifestPlugin = require('webpack-manifest-plugin');
+const ManifestPlugin = require("webpack-manifest-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const { resolve } = require("path");
 
 module.exports = function() {
   const id = 5; //Math.random()
 
   const rc = {
-    devtool :'source-map',
+    devtool: "source-map",
     optimization: {
-      sideEffects : true, // respect the sideEffects flag in package.json
-      flagIncludedChunks : true,
-      mergeDuplicateChunks : true,
-      removeEmptyChunks : true,
+      sideEffects: true, // respect the sideEffects flag in package.json
+      flagIncludedChunks: true,
+      mergeDuplicateChunks: true,
+      removeEmptyChunks: true,
       removeAvailableModules: true,
       // optimization.nodeEnv: '..', uses DefinePlugin to set process.env.NODE_ENV
-      chunkIds: 'named',
-      moduleIds: 'hashed',
+      chunkIds: "named",
+      moduleIds: "hashed",
       namedModules: true, //named modules for better debugging
       runtimeChunk: {
         name: entrypoint => `runtime~${entrypoint.name}`
@@ -63,6 +65,12 @@ module.exports = function() {
                 sourceMap: true
               }
             },
+           /* {
+              loader: "postcss-loader",
+              options: {
+                sourceMap: true
+              }
+            },*/
             {
               loader: "sass-loader", // compiles Sass to CSS
               options: {
@@ -74,8 +82,9 @@ module.exports = function() {
       ]
     },
     plugins: [
+      new BundleAnalyzerPlugin({analyzerMode: 'none'}),
       new ManifestPlugin({
-        fileName:'manifesto.json',
+        fileName: "manifesto.json"
         // ??publicPath:'pubAssets/' only adjust the values in the manifest nowhere else, how is this usefull?
         // ??basePath: 'someBase' added to theys of the manifest as supposed to the values (see publicPath) used with manifest keys
       }),
@@ -92,9 +101,9 @@ module.exports = function() {
         inject: false, //inject assets into the given template  = false (template has own logic, leave it alone)
         //appMountHtmlSnippet: '<a href="http://www.google.com/hello">hello</a>',
         appMountId: "app", // create a <div id="app"></div> for app mounting
-        appMountIds: ["zip", "zap"],
-        //baseHref: 'https://www.jacob-bogers.com' // all rels url go here, favicon, bundle.js etc
-        //devServer: 'http://localhost:3000' , will try and load http://localhost:3000/webpack-dev-server.js
+        // appMountIds: ["zip", "zap"],
+        // baseHref: 'https://www.jacob-bogers.com' // all rels url go here, favicon, bundle.js etc
+        // devServer: 'http://localhost:3000' , will try and load http://localhost:3000/webpack-dev-server.js
         lang: "en-US",
         links: [], // external loadable fonts etc, whatever
         mobile: true,
@@ -104,7 +113,7 @@ module.exports = function() {
             content: "width=device-width, initial-scale=1"
           }
         ],
-        inlineManifestWebpackName: "webpackManifest",
+        inlineManifestWebpackName: "webpackManifest"
         /*window: {
           env: {
             apiHost: 'http://myapi.com/api/v1'

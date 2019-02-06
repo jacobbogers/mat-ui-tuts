@@ -15,13 +15,14 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^3.9.1",
+    "@material-ui/core": "3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "@material-ui/styles": "^3.0.0-alpha.10",
     "@material-ui/system": "^3.0.0-alpha.2",
     "babel-loader": "^8.0.5",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
     "react-jss": "^8.6.1",
     "typeface-roboto": "0.0.54",
     "webpack": "^4.29.0",
@@ -41,6 +42,7 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-manifest-plugin": "^2.0.4"
   },
   "homepage": "https://github.com/jacobbogers/mat-ui-tuts#readme",
@@ -52,7 +54,7 @@
     "url": "git+https://github.com/jacobbogers/mat-ui-tuts.git"
   },
   "scripts": {
-    "build": "webpack --mode development",
+    "build": "webpack",
     "production": "NODE_ENV=production npm start",
     "start": "webpack -w & nodemon --exec yarn babel-node -- server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
