@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 //
 import Hook from "./css-in-js/hook";
 import HOC from "./css-in-js/hoc";
-//import AdaptStyleComp from "./css-in-js/adapt-style";
+import AdaptStyleComp from "./css-in-js/adapt-style";
 
 // app.scss
 import './app.scss';
@@ -26,7 +26,7 @@ function App() {
       </Button>
       <Hook />
       <HOC />
-    {/* <AdaptStyleComp />*/}
+    <AdaptStyleComp />
     </div>
   );
 }

@@ -27,22 +27,24 @@ const MyButton = styled(({
     color: 'white',
     height: 48,
     padding: '0 30px',
+    margin:'1em 0'
 });
 
-const MyContainer = styled({ ...orher }) => <div {...other} />) ({
+const styles = {
     display: "flex",
+    border: '1px solid green',
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "start"
-})
-
+    alignItems: "center"
+};
 
 
 function AdaptingStyledComponents() {
-    return (<MyContainer>
-        <MyButton color="red" > Red </MyButton>
-        <MyButton color="blue" > Blue </MyButton>
-    </MyContainer>
+    return (
+    <div style={styles}>
+        <MyButton color="red">Red</MyButton>
+        <MyButton color="blue">Blue</MyButton>
+    </div>
     );
 }
 
