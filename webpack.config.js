@@ -38,6 +38,18 @@ module.exports = function() {
     module: {
       rules: [
         {
+          test: /\.(woff|woff2|ttf)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name:'[name].[ext]',
+                outputPath:'fonts'
+              }
+            }
+          ]
+        },
+        {
           test: /\.(jsx?)$/,
           exclude: /node_modules/,
           use: {
@@ -49,12 +61,14 @@ module.exports = function() {
           use: [
             {
               loader: "file-loader",
-              options: {}
+              options: {
+                outputPath:'images'
+              }
             }
           ]
         },
         {
-          test: /\.scss$/,
+          test: /\.s?css$/,
           use: [
             {
               loader: MiniCssExtractPlugin.loader // creates style nodes from JS strings
