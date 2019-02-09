@@ -10,8 +10,8 @@ const useStyles = makeStyles(theme => ({
     boxShadow: theme.boxShadow,
     color: 'white !important',
     height: 48,
-    padding: '0 30px !important',
-    margin:'1rem 0 !important'
+    padding: '0 30px !important', // "important" is added because of the order creation of jss stylesheet
+    margin:'1rem 0 !important' // "important" is added because of the order creation of js stylesheet
   },
 }));
 
@@ -20,15 +20,15 @@ const cStyles = {
     flexDirection:'column',
     alignItems: 'center',
     justifyContent: 'center',
-    border: '3px solid yellow'
+    border: '3px dashed yellow'
 }
 
 function DeepChild() {
   const classes = useStyles();
-  return <Button className={classes.root}>ClassName:{classes.root}</Button>;
+  return <Button className={classes.root}>ClassName-atn:{classes.root}</Button>;
 }
 
-function Theme() {
+function AdvancedTheme() {
   return (
     <div style={cStyles}>
       <ThemeProvider
@@ -53,4 +53,4 @@ function Theme() {
   );
 }
 
-export default Theme;
+export default AdvancedTheme;

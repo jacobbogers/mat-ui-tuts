@@ -27,7 +27,7 @@ const MyButton = styled(({
     color: 'white',
     height: 48,
     padding: '0 30px',
-    margin:'1em 0'
+    margin:'1em 0 !important'
 });
 
 const styles = {

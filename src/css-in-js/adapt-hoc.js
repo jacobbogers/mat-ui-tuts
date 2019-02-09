@@ -21,7 +21,7 @@ const styles = {
     color: 'white',
     height: 48,
     padding: '30px',
-    margin:'16px 0'
+    margin:'1em 0 !important'
   },
 };
 
@@ -37,8 +37,8 @@ MyButtonRaw.propTypes = {
 
 const styless = {
     display: "flex",
-    border: '1px solid green',
-    flexDirection: "row",
+    border: '2px dashed blue',
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
 };

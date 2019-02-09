@@ -9,7 +9,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const { resolve } = require("path");
 
 module.exports = function() {
-  const id = 5; //Math.random()
+  const id = Math.round(Math.random() * 1000)
 
   const rc = {
     devtool: "source-map",

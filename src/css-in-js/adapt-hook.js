@@ -19,7 +19,8 @@ const useStyles = makeStyles({
       blue: '0 3px 5px 2px rgba(33, 203, 243, .3)',
     }),
     color: 'white',
-    height: 48
+    height: 48,
+    margin:'1rem 0 !important'
   },
 });
 
@@ -35,7 +36,7 @@ MyButton.propTypes = {
 
 const styles = {
     display: "flex",
-    border: '1px solid green',
+    border: '1px solid orange',
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center"
@@ -43,7 +44,7 @@ const styles = {
 
 function AdaptingHook() {
   return (
-    <div className={"childMarginsHorz"} style={styles}>
+    <div style={styles}>
       <MyButton color="red">Red</MyButton>
       <MyButton color="blue">Blue</MyButton>
     </div>
