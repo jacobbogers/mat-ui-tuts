@@ -15,6 +15,9 @@ import UseThemeHOC from './css-in-js/advanced-theme-hoc';
 import UseThemeHook from "./css-in-js/advanced-theme-hook";
 import UseThemeNesting from "./css-in-js/advanced-theme-nesting";
 
+// system (alpha)
+import Demo from './system-alpha/basics/demo'
+
 // app.scss
 import "./app.scss";
 
@@ -28,33 +31,15 @@ const styles = {
 function App() {
   return (
     <div id="container" style={styles}>
+     <Demo />
      <AdaptingHOC /> 
      <AdaptingHook />
-     <AdaptingStyledComponents /> 
+     <AdaptingStyledComponents />
+     <UseThemeHOC /> 
      <UseThemeHook />
      <UseThemeNesting />
     </div>
   );
 }
-
-import jss from 'jss'
-
-const createGenerateId = () => {
-  let counter = 0
-
-  return function(rule, sheet,c,d,e) {
-    return JSON.stringify({rule, sheet, c,d,e})//`pizza--${rule.key}-${counter++}`
-  }
-}
-
-jss.setup({createGenerateId})
-
-const sheet = jss.createStyleSheet({
-  button: {
-    float: 'left'
-  }
-})
-
-console.log(sheet.toString());
 
 ReactDOM.render(<App />, document.querySelector("#app"));

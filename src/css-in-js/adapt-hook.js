@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 // Like https://github.com/brunobertolini/styled-by
 const styledBy = (property, mapping) => props => mapping[props[property]];
 
+// cooks the jss stylesheet at this
 const useStyles = makeStyles({
   root: {
     background: styledBy('color', {
@@ -45,8 +46,8 @@ const styles = {
 function AdaptingHook() {
   return (
     <div style={styles}>
-      <MyButton color="red">Red</MyButton>
-      <MyButton color="blue">Blue</MyButton>
+      <MyButton color="red">(adapt-hook)Red</MyButton>
+      <MyButton color="blue">(adapt-hook)Blue</MyButton>
     </div>
   );
 }

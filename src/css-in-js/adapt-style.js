@@ -42,8 +42,8 @@ const styles = {
 function AdaptingStyledComponents() {
     return (
     <div style={styles}>
-        <MyButton color="red">Red</MyButton>
-        <MyButton color="blue">Blue</MyButton>
+        <MyButton color="red">(adapt-style)Red</MyButton>
+        <MyButton color="blue">(adapt-style)Blue</MyButton>
     </div>
     );
 }

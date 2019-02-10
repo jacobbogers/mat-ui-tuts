@@ -35,7 +35,7 @@ MyButtonRaw.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-const styless = {
+const cStyles = {
     display: "flex",
     border: '2px dashed blue',
     flexDirection: "column",
@@ -48,9 +48,9 @@ const MyButton = withStyles(styles)(MyButtonRaw);
 
 function AdaptingHOC() {
   return (
-    <div style={styless}>
-      <MyButton color="red">Red</MyButton>
-      <MyButton color="blue">Blue</MyButton>
+    <div style={cStyles}>
+      <MyButton color="red">(adapt-hoc)Red</MyButton>
+      <MyButton color="blue">(adapt-hoc)Blue</MyButton>
     </div>
   );
 }
