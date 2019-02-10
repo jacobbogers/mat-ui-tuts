@@ -1,13 +1,18 @@
+# API
+
+## CSS
+
 ### Styles
+
 - withStyles (connetor like)
 - styled (hoc)
 - makeStyles (hook)
 
 ### Themes
+
 - useTheme (hook) gives access to theme object in component
 - makeStyles/useStyles (provide function that will pass theme object as first argument
 - withTheme enhancer (just like "connect" for react-redux)
-
 
 #### ThemeProvider
 
@@ -28,7 +33,6 @@ function App() {
 
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
-
 
 #### withTheme
 

@@ -20,7 +20,7 @@ function WithTheme() {
         spacing: '8px',
       }}
     >
-      <DeepChild />
+    <DeepChild />
     </ThemeProvider>
   );
 }

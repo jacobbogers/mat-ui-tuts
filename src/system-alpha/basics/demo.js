@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import NoSsr from '@material-ui/core/NoSsr';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -12,12 +13,14 @@ function ShowProps(){
   const args = Array.from(arguments);
   const props = { ...args[0], ...args[1], length: args.length};
   console.log(args);
-  const propList = Object.entries(props).map( ([key, value])=> <tr key={key}><td>{key}</td>→<td>{value}</td></tr>)
+  const propList = Object.entries(props).map( ([key, value])=> <tr key={key}><td>{key}</td><td>→</td><td>{value}</td></tr>)
   return (
   <div> 
     <p>These are the props</p>
     <table>
+      <tbody>
        {propList}
+      </tbody>
     </table>
   </div>
   ); 
