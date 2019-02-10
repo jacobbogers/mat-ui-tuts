@@ -1,25 +1,41 @@
 import React from 'react';
-//import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import NoSsr from '@material-ui/core/NoSsr';
-//import { createMuiTheme  } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { palette, spacing, typography } from '@material-ui/system';
-import { ThemeProvider , withTheme } from '@material-ui/styles';
 
-//const Box = styled.div`${palette}${spacing}${typography}`;
+const Box = styled.div`${palette}${spacing}${typography}`;
+// or import { unstable_Box as Box } from '@material-ui/core/Box';
 
-import { unstable_Box as Box } from '@material-ui/core/Box';
-//const Box2 = withTheme()(Box)
-/*const theme = createMuiTheme({
+
+function ShowProps(){
+  const args = Array.from(arguments);
+  const props = { ...args[0], ...args[1], length: args.length};
+  console.log(args);
+  const propList = Object.entries(props).map( ([key, value])=> <tr key={key}><td>{key}</td>→<td>{value}</td></tr>)
+  return (
+  <div> 
+    <p>These are the props</p>
+    <table>
+       {propList}
+    </table>
+  </div>
+  ); 
+}
+
+const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
   },
-});*/
+});
 
 function Demo() {
   return (
-   <NoSsr>
-      {/*<ThemeProvider theme={{}}>*/}
-        <div
+    <NoSsr>
+      <ThemeProvider theme={theme}>
+        <div>
+        <ShowProps prop123="value123"/> 
+        <Box
           color="primary.main"
           bgcolor="background.paper"
           width="100%"
@@ -27,10 +43,10 @@ function Demo() {
           fontSize={{ xs: 'h6.fontSize', sm: 'h4.fontSize', md: 'h3.fontSize' }}
           p={{ xs: 2, sm: 3, md: 4 }}
         >
-        `[${palette}][${spacing}][${typography}]`
           @material-ui/system
+        </Box>
         </div>
-     {/* </ThemeProvider>*/}
+      </ThemeProvider>
     </NoSsr>
   );
 }
