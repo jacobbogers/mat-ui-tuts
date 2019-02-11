@@ -1,3 +1,6 @@
 {
-    "javascript.validate.enable": false
+	"workbench.iconTheme": "vscode-icons",
+	"todo-tree.statusBar": "total",
+	"todo-tree.tags": ["TODO", "FIXME", "NOTE"],
+	"eslint.enable": true
 }
