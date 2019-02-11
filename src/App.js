@@ -21,7 +21,7 @@ import Demo from './system-alpha/basics/demo';
 import Box from './Box';
 
 import Variant from './system-alpha/basics/variants';
-
+import CssProp from './system-alpha/basics/css-props'
 // app.scss
 import './app.scss';
 
@@ -36,6 +36,7 @@ const styles = {
 function App() {
 	return (
 		<div id="container" style={styles}>
+			<CssProp />
 			<Variant />
 			<Box p={{ xs: 2, sm: 3, md: 4 }} color="white" bgcolor="palevioletred">
 				Styled components
