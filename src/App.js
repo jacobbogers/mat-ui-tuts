@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'typeface-roboto';
+import 'typeface-open-sans';
 
 // demos basic
 
@@ -18,6 +19,9 @@ import UseThemeNesting from './css-in-js/advanced-theme-nesting';
 // system (alpha)
 import Demo from './system-alpha/basics/demo';
 import Box from './Box';
+
+import Variant from './system-alpha/basics/variants';
+
 // app.scss
 import './app.scss';
 
@@ -32,6 +36,7 @@ const styles = {
 function App() {
 	return (
 		<div id="container" style={styles}>
+			<Variant />
 			<Box p={{ xs: 2, sm: 3, md: 4 }} color="white" bgcolor="palevioletred">
 				Styled components
 			</Box>

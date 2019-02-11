@@ -26,6 +26,7 @@
 		"react-dom": "16.8.0",
 		"react-jss": "^8.6.1",
 		"styled-components": "^4.1.3",
+		"typeface-open-sans": "0.0.54",
 		"typeface-roboto": "0.0.54"
 	},
 	"description": "materual-ui-learnings",
@@ -68,11 +69,11 @@
 		"node": ">= 10.8.0"
 	},
 	"eslintConfig": {
-    "settings":{
-      "react":{
-        "version":"detect"
-      }
-    },
+		"settings": {
+			"react": {
+				"version": "detect"
+			}
+		},
 		"rules": {
 			"react/jsx-uses-vars": 2,
 			"react/jsx-uses-react": 2,
