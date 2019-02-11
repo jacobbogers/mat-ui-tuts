@@ -3,17 +3,17 @@ import {
     styled
 } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-import {
+/*import {
     FormHelperText
-} from '@material-ui/core';
+} from '@material-ui/core';*/
 
 // Like https://github.com/brunobertolini/styled-by
 const styledBy = (property, mapping) => props => mapping[props[property]];
 
-const MyButton = styled(({
-    color,
-    ...other
-}) => <Button {...other} />)({
+const MyButton = styled( props => {
+    const { classes: classesIgnored, color: colorIgnored, ...other } = props;
+    return <Button {...other}  />
+})({
     background: styledBy('color', {
         red: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
         blue: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',

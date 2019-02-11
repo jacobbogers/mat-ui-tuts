@@ -26,7 +26,7 @@ const styles = {
 };
 
 function MyButtonRaw(props) {
-  const { classes, color, ...other } = props;
+  const { classes, color: Ignored, ...other } = props;
   return <Button className={classes.root} {...other} />;
 }
 

@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 });
 
 function MyButton(props) {
-  const { color, ...other } = props;
+  const { color: Ignored, ...other } = props;
   const classes = useStyles(props);
   return <Button className={classes.root} {...other} />;
 }
