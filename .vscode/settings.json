@@ -2,5 +2,10 @@
 	"workbench.iconTheme": "vscode-icons",
 	"todo-tree.statusBar": "total",
 	"todo-tree.tags": ["TODO", "FIXME", "NOTE"],
-	"eslint.enable": true
+    "eslint.enable": true,
+    "prettier.eslintIntegration": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.nodePath": "./node_modules/.bin",
+    "eslint.trace.server": "messages",
+    "eslint.workingDirectories": ["src","lib"]
 }

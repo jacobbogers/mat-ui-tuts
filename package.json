@@ -40,9 +40,13 @@
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
     "eslint": "^5.13.0",
+    "eslint-config-standard": "^12.0.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
     "favicons-webpack-plugin": "0.0.9",
     "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
@@ -64,53 +68,41 @@
     "node": ">= 10.8.0"
   },
   "eslintConfig": {
+    "rules":{
+      "no-unused-vars": "error",
+      "react/jsx-uses-vars": 2,
+      "react/jsx-uses-react": 2,
+      "no-console":0
+    },
     "env": {
       "browser": true,
-      "es6": true,
-      "jest": true,
+      "commonjs": true,
+      "shared-node-browser": true,
       "mocha": true,
-      "node": true
+      "node": true,
+      "es6": true
     },
-    "extends":"airbnb-base",
-    
+    "extends": ["eslint:recommended","plugin:react/recommended"],
+    "globals": {
+      "console": true,
+      "document": true
+    },
     "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module",
-      "jsx": true
+      "ecmaFeatures": {
+        "impliedStrict": true,
+        "globalReturn": true,
+        "jsx": true
+      },
+      "ecmaVersion": 9,
+      "sourceType": "module"
     },
     "plugins": [
       "prettier",
-      "import"
+      "import",
+      "react"
     ],
-    "root": true,
-    "rules": {
-      "eslint-env": "node",
-      "indent": [
-        "error",
-        "tab"
-      ],
-      "linebreak-style": [
-        "error",
-        "unix"
-      ],
-      "no-console": "off",
-      "no-control-regex": "off",
-      "prettier/prettier": [
-        "error",
-        {
-          "printWidth": 100,
-          "singleQuote": true
-        }
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ]
-    }
+    "root": true
+    
   },
   "homepage": "https://github.com/jacobbogers/mat-ui-tuts#readme",
   "license": "ISC",

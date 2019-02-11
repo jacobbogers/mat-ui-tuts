@@ -1,4 +1,5 @@
 import React from 'react';
+import 'prop-types';
 import {
   ThemeProvider,
   makeStyles
