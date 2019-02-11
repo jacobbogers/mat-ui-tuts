@@ -3,9 +3,6 @@ import {
     styled
 } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-/*import {
-    FormHelperText
-} from '@material-ui/core';*/
 
 // Like https://github.com/brunobertolini/styled-by
 const styledBy = (property, mapping) => props => mapping[props[property]];
