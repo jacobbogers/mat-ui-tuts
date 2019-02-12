@@ -1,0 +1,16 @@
+.nyc_output/
+.vscode/
+!.vscode/settings
+coverage/
+doc/
+node_modules/
+scripts/
+.codecov.yml
+.editorconfig
+.eslintignore
+.gitignore
+.nycrc
+.prettierrc
+package-lock.json
+package.json
+README.md
