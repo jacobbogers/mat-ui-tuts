@@ -96,7 +96,7 @@ module.exports = function() {
       ]
     },
     plugins: [
-      new BundleAnalyzerPlugin({analyzerMode: 'none'}),
+      //new BundleAnalyzerPlugin({analyzerMode: 'none'}),
       new ManifestPlugin({
         fileName: "manifesto.json"
         // ??publicPath:'pubAssets/' only adjust the values in the manifest nowhere else, how is this usefull?

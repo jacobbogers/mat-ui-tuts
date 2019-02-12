@@ -1,3 +1,5 @@
 {
-    "javascript.validate.enable": false
+    "javascript.validate.enable": false,
+    "prettier.endOfLine": "lf",
+    "prettier.jsxBracketSameLine": true
 }
