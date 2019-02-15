@@ -21,6 +21,7 @@
 		"cross-env": "^5.2.0",
 		"eslint-config-airbnb": "^17.1.0",
 		"eslint-plugin-import": "^2.16.0",
+		"jss-preset-default": "^10.0.0-alpha.7",
 		"prop-types": "^15.6.2",
 		"react": "16.8.0",
 		"react-dom": "16.8.0",
