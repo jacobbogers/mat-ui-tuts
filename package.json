@@ -21,8 +21,9 @@
 		"cross-env": "^5.2.0",
 		"eslint-config-airbnb": "^17.1.0",
 		"eslint-plugin-import": "^2.16.0",
+		"jss": "^10.0.0-alpha.10",
 		"jss-preset-default": "^10.0.0-alpha.7",
-		"prop-types": "^15.6.2",
+		"prop-types": "^15.7.2",
 		"react": "16.8.0",
 		"react-dom": "16.8.0",
 		"react-jss": "^8.6.1",
@@ -34,7 +35,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/node": "^7.2.2",
-		"@babel/plugin-proposal-class-properties": "^7.3.0",
+		"@babel/plugin-proposal-class-properties": "^7.3.3",
 		"@babel/preset-env": "^7.3.1",
 		"@babel/preset-react": "^7.0.0",
 		"babel-loader": "^8.0.5",
@@ -55,7 +56,8 @@
 		"html-webpack-plugin": "^3.2.0",
 		"html-webpack-template": "^6.2.0",
 		"inline-manifest-webpack-plugin": "^4.0.2",
-		"jss": "^9.8.7",
+		"jss-plugin-camel-case": "^10.0.0-alpha.7",
+		"jss-plugin-vendor-prefixer": "^10.0.0-alpha.7",
 		"mini-css-extract-plugin": "^0.5.0",
 		"node-sass": "^4.11.0",
 		"prettier": "^1.16.4",
@@ -70,29 +72,13 @@
 		"node": ">= 10.8.0"
 	},
 	"eslintConfig": {
-		"settings": {
-			"react": {
-				"version": "detect"
-			}
-		},
-		"rules": {
-			"react/jsx-uses-vars": 2,
-			"react/jsx-uses-react": 2,
-			"no-console": 0,
-			"no-unused-vars": [
-				2,
-				{
-					"varsIgnorePattern": "[iI]gnored"
-				}
-			]
-		},
 		"env": {
 			"browser": true,
 			"commonjs": true,
-			"shared-node-browser": true,
+			"es6": true,
 			"mocha": true,
 			"node": true,
-			"es6": true
+			"shared-node-browser": true
 		},
 		"extends": [
 			"eslint:recommended",
@@ -104,8 +90,8 @@
 		},
 		"parserOptions": {
 			"ecmaFeatures": {
-				"impliedStrict": true,
 				"globalReturn": true,
+				"impliedStrict": true,
 				"jsx": true
 			},
 			"ecmaVersion": 9,
@@ -116,7 +102,23 @@
 			"import",
 			"react"
 		],
-		"root": true
+		"root": true,
+		"rules": {
+			"no-console": 0,
+			"no-unused-vars": [
+				2,
+				{
+					"varsIgnorePattern": "[iI]gnored"
+				}
+			],
+			"react/jsx-uses-react": 2,
+			"react/jsx-uses-vars": 2
+		},
+		"settings": {
+			"react": {
+				"version": "detect"
+			}
+		}
 	},
 	"homepage": "https://github.com/jacobbogers/mat-ui-tuts#readme",
 	"license": "ISC",

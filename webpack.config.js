@@ -113,7 +113,9 @@ module.exports = function() {
 				//template configuration
 				template: require('html-webpack-template'),
 				inject: false, //inject assets into the given template  = false (template has own logic, leave it alone)
-				//appMountHtmlSnippet: '<a href="http://www.google.com/hello">hello</a>',
+				/*appMountHtmlSnippet: `<div id="custom-insertion-point">
+				This might be any DOM node of your choice which can serve as an insertion point.
+			  </div>`,*/
 				appMountId: 'app', // create a <div id="app"></div> for app mounting
 				// appMountIds: ["zip", "zap"],
 				// baseHref: 'https://www.jacob-bogers.com' // all rels url go here, favicon, bundle.js etc
