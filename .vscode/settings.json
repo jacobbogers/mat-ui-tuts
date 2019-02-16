@@ -7,5 +7,9 @@
     "eslint.alwaysShowStatus": true,
     "eslint.nodePath": "./node_modules/.bin",
     "eslint.trace.server": "messages",
-    "eslint.workingDirectories": ["src","lib"]
+    "eslint.workingDirectories": [
+        "src",
+        "lib"
+    ],
+    "markdown.extension.tableFormatter.normalizeIndentation": true
 }
