@@ -10,9 +10,11 @@ const styles = theme => ({
   root: {
       background: 'orange', //orange[500]
       margin: theme.spacing.unit,
+      border:'3px dashed green'
   },
   label:{
-    fontSize:'2rem'
+    fontSize:'2rem',
+    color:'red'
   },
   fabButton: {
     margin: theme.spacing.unit,
@@ -32,7 +34,7 @@ function ContainedButtons(props) {
       <Button variant="text" className={classes.button}>
         Default
       </Button>
-      <Button variant="outlined" color="primary" classes={classes} >
+      <Button variant="outlined" component="span" color="primary" classes={classes}>
         Primary
       </Button>
       <Button variant="contained" color="secondary"  className={classes.button}>

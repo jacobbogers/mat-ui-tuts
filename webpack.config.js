@@ -38,7 +38,7 @@ module.exports = function() {
 		module: {
 			rules: [
 				{
-					test: /\.(woff|woff2|ttf)$/,
+					test: /\.(woff|woff2|ttf|eot|svg)$/,
 					use: [
 						{
 							loader: 'file-loader',
@@ -79,12 +79,13 @@ module.exports = function() {
 								sourceMap: true
 							}
 						},
-						/* {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true
-              }
-            },*/
+						{
+							loader: 'postcss-loader',
+							options: {
+								sourceMap: true
+							}
+						},
+						'resolve-url-loader',
 						{
 							loader: 'sass-loader', // compiles Sass to CSS
 							options: {
