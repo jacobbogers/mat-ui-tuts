@@ -20,11 +20,14 @@ function FloatingActionButtons(props) {
   const { classes } = props;
   return (
     <div>
-      <Fab color="primary" aria-label="Add" className={classes.fab}>
+      <Fab color="primary" size="medium" aria-label="Add" className={classes.fab}>
         <AddIcon />
       </Fab>
-      <Fab color="secondary" aria-label="Edit" className={classes.fab}>
+      <Fab color="secondary" size="small" aria-label="Edit" className={classes.fab}>
         <Icon>edit_icon</Icon>
+      </Fab>
+      <Fab color="default" size="large" aria-label="Edit" className={classes.fab}>
+        <Icon>close_icon</Icon>
       </Fab>
       <Fab variant="extended" aria-label="Delete" className={classes.fab}>
         <NavigationIcon className={classes.extendedIcon} />

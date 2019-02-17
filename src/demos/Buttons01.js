@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 
 const styles = theme => ({
   button: {
@@ -29,12 +30,14 @@ const styles = theme => ({
 
 function ContainedButtons(props) {
   const { classes } = props;
+  const { button, root , label, fabButton, input } = classes;
+  const passdown = {  root, label  }
   return (
     <div>
-      <Button variant="text" className={classes.button}>
+      <Button variant="text" className={button}>
         Default
       </Button>
-      <Button variant="outlined" component="span" color="primary" classes={classes}>
+      <Button variant="outlined" component="span" color="primary" classes={passdown}>
         Primary
       </Button>
       <Button variant="contained" color="secondary"  className={classes.button}>
@@ -43,30 +46,30 @@ function ContainedButtons(props) {
       <Button variant="contained" color="secondary" disabled className={classes.button}>
         Disabled
       </Button>
-      <Button variant="fab" color="secondary" className={classes.button}>
+      <Fab color="secondary" className={button}>
         D+
-      </Button>
-      <Button variant="fab" color="primary" className={classes.fabButton}>
+      </Fab>
+      <Fab color="primary" className={fabButton}>
         d
-      </Button>
+      </Fab>
       <Button variant="contained" href="#contained-buttons" className={classes.button}>
         Link
       </Button>
-      <Button variant="extendedFab" href="#contained-buttons" className={classes.button}>
+      <Fab variant="extended" href="#contained-buttons" className={classes.button}>
         Link
-      </Button>
-      <Button variant="flat" color="primary" href="#contained-buttons" className={classes.button}>
+      </Fab>
+      <Button variant="text" color="primary" href="#contained-buttons" className={classes.button}>
         Link-flat
       </Button>
-      <Button variant="raised" href="#contained-buttons"  size="medium" className={classes.button}>
+      <Button variant="contained" href="#contained-buttons"  size="medium" className={classes.button}>
         Link-raised
       </Button>
-      <Button variant="raised" href="#contained-buttons"  size="medium"  className={classes.buttonChangedRoot}>
+      <Button variant="contained" href="#contained-buttons"  size="medium"  className={classes.buttonChangedRoot}>
         Link-raised
       </Button>
       <input
         accept="image/*"
-        className={classes.input}
+        className={input}
         id="contained-button-file"
         multiple
         type="file"
