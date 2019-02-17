@@ -18,8 +18,10 @@ import Icon from '@material-ui/core/Icon';
 <Icon>star</Icon>
 ```
 
-# Button 
 
+# Button, Fab, CustomButton, IconButton
+
+All done except for Custom button based on "BaseButton" class.
 
 
 ## CSS
@@ -55,3 +57,7 @@ You can override all the class names injected by Material-UI thanks to the class
 | sizeSmall          | Styles applied to the root element if size="small".                                        |
 | sizeLarge          | Styles applied to the root element if size="large".                                        |
 | fullWidth          | Styles applied to the root element if fullWidth={true}.                                    |
+
+# Avatar
+
+use random [user data generator](https://randomuser.me/)
