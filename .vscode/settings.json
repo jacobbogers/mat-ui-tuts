@@ -11,5 +11,6 @@
         "src",
         "lib"
     ],
-    "markdown.extension.tableFormatter.normalizeIndentation": true
+    "markdown.extension.tableFormatter.normalizeIndentation": true,
+    "git.ignoreLimitWarning": true
 }

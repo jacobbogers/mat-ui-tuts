@@ -6,6 +6,7 @@ import PrimaryFieldAppBar from './demos/PrimaryFieldAppBar';
 import Buttons01 from './demos/Buttons01';
 import Fabs from './demos/Fabs';
 import IconButtons from './demos/IconButtons';
+import Avatars from './demos/Avatars';
 
 import './app.scss';
 //import 'material-icons';
@@ -18,6 +19,7 @@ ReactDOM.render(
 		<Buttons01 />
 		<Fabs />
 		<IconButtons/>
+		<Avatars/>
 	</div>,
 	document.querySelector('#app')
 );
