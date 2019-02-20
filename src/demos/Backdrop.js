@@ -8,10 +8,10 @@ const styles = {
   /* turn this on to make backdrop "clickable" 
   root: {
     zIndex: 1
-  },*/
+  },
   invisible:{
     opacity: 0
-  },
+  },*/
   
 };
 
@@ -22,7 +22,7 @@ const td = {
 
 function BackdropHOC(props) {
   
-  const [ invisible, setInvisible ] = useState(false);
+  const [ invisible, setInvisible ] = useState(true);
   
   const { classes } = props;
   
