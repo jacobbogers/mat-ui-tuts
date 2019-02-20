@@ -5,17 +5,19 @@ import Backdrop from '@material-ui/core/BackDrop';
 
 
 const styles = {
-   invisible: {
-    margin: 10,
-    width: 60,
-    height: 60,
+  /* turn this on to make backdrop "clickable" 
+  root: {
+    zIndex: 1
+  },*/
+  invisible:{
+    opacity: 0
   },
+  
 };
 
 const td = {
-  appear: 100,
-  enter: 250,
-  exit:250 
+  enter: 1250,
+  exit:1250 
 }
 
 function BackdropHOC(props) {
@@ -33,4 +35,4 @@ BackdropHOC.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles({})(BackdropHOC);
+export default withStyles(styles)(BackdropHOC);
