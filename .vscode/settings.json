@@ -12,5 +12,6 @@
         "lib"
     ],
     "markdown.extension.tableFormatter.normalizeIndentation": true,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "npm-intellisense.importES6": false
 }

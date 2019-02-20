@@ -7,13 +7,11 @@ import Grid from '@material-ui/core/Grid';
 const styles = {
   avatar: {
     margin: 10,
-    width: 120,
-    height: 120
   },
   bigAvatar: {
     margin: 10,
-    width: 120,
-    height: 120,
+    width: 40,
+    height: 40,
   },
 };
 
