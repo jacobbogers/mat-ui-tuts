@@ -70,3 +70,5 @@ https://github.com/mui-org/material-ui/blob/next/packages/material-ui/src/Backdr
 
 Weird component, looked at source, but, not much to say about that
 
+# Badge
+

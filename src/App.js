@@ -8,6 +8,7 @@ import Fabs from './demos/Fabs';
 import IconButtons from './demos/IconButtons';
 import Avatars from './demos/Avatars';
 import Backdrop from './demos/Backdrop';
+import SimpleBadges from './demos/SimpleBadges';
 
 import './app.scss';
 //import 'material-icons';
@@ -22,6 +23,7 @@ ReactDOM.render(
 		<Fabs />
 		<IconButtons/>
 		<Avatars/>
+		<SimpleBadges />
 	</div>,
 	document.querySelector('#app')
 );
