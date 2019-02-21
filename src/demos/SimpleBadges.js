@@ -15,7 +15,8 @@ const styles = theme => ({
     margin: theme.spacing.unit * 2,
   },
   padding: {
-    padding: `0 ${theme.spacing.unit * 2}px`,
+    padding: `1 ${theme.spacing.unit * 2}px`,
+    border: '1px solid red'
   },
 });
 
@@ -50,7 +51,7 @@ function SimpleBadge(props) {
         </Tabs>
       </AppBar>
       <Badge color="primary" badgeContent={4} className={classes.margin}>
-        <Typography className={classes.padding}>Typography</Typography>
+        <Typography variant="h1" className={classes.padding}>Typography</Typography>
       </Badge>
       <Badge color="primary" badgeContent={4} className={classes.margin}>
         <Button variant="contained">Button</Button>
