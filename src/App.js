@@ -9,6 +9,9 @@ import IconButtons from './demos/IconButtons';
 import Avatars from './demos/Avatars';
 import Backdrop from './demos/Backdrop';
 import SimpleBadges from './demos/SimpleBadges';
+import BadgeMax from './demos/BadgeMax';
+import DotBadge from './demos/DotBadge';
+
 
 import './app.scss';
 //import 'material-icons';
@@ -24,6 +27,8 @@ ReactDOM.render(
 		<IconButtons/>
 		<Avatars/>
 		<SimpleBadges />
+		<BadgeMax />
+		<DotBadge />
 	</div>,
 	document.querySelector('#app')
 );

@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 2,
+    margin: theme.spacing.unit * 1,
   },
   padding: {
     padding: `0 ${theme.spacing.unit * 2}px`,
@@ -23,6 +23,7 @@ function SimpleBadge(props) {
   const { classes } = props;
   return (
     <div>
+    <MailIcon />
       <div>
         <Badge className={classes.margin} badgeContent={4} color="primary">
           <MailIcon />
