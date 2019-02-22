@@ -19,7 +19,7 @@ import DotBadge from './demos/DotBadge';
 import TypographyDisplay from './demos/TypographyDisplay';
 import NextTypes from './demos/NextTypes';
 import SimpleBottomNavigationHooks from './demos/BottomNavigatorHooks';
-
+import CustomButton from './demos/BottomBase';
 
 
 import 'typeface-roboto';
@@ -53,6 +53,7 @@ const App = withStyles(styles)(({ classes: { main } }) => (
 		<TypographyDisplay />
 		<NextTypes/>
 		<SimpleBottomNavigationHooks/>
+		<CustomButton/>
 	</div>
 ));
 

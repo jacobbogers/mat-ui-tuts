@@ -57,7 +57,7 @@ module.exports = function() {
 					}
 				},
 				{
-					test: /\.(png|jpg|gif)$/,
+					test: /\.(png|jpg|gif|webp)$/,
 					use: [
 						{
 							loader: 'file-loader',
@@ -106,8 +106,8 @@ module.exports = function() {
 			new HtmlWebPackPlugin({
 				title: '📖 👨‍🎓 tutorial',
 				/* overrided by the template login , look below, when not using 
-           webpackHTMLtemplateplgin ->meta: {  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no" },
-        */
+          			 webpackHTMLtemplateplgin ->meta: {  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no" },
+        		*/
 				hash: true,
 				showErrors: true,
 				xhtml: true,
