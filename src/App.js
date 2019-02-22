@@ -1,5 +1,10 @@
+
+// 3rd party
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { withStyles } from '@material-ui/core/styles';
+
+// app components
 import SimpleAppBar from './demos/SimpleAppBar';
 import ButtonAppBar from './demos/ButtonAppBar';
 import PrimaryFieldAppBar from './demos/PrimaryFieldAppBar';
@@ -13,7 +18,9 @@ import BadgeMax from './demos/BadgeMax';
 import DotBadge from './demos/DotBadge';
 import TypographyDisplay from './demos/TypographyDisplay';
 import NextTypes from './demos/NextTypes';
-import { withStyles } from '@material-ui/core/styles';
+import SimpleBottomNavigationHooks from './demos/BottomNavigatorHooks';
+
+
 
 import 'typeface-roboto';
 import './app.scss';
@@ -45,6 +52,7 @@ const App = withStyles(styles)(({ classes: { main } }) => (
 		</div>
 		<TypographyDisplay />
 		<NextTypes/>
+		<SimpleBottomNavigationHooks/>
 	</div>
 ));
 

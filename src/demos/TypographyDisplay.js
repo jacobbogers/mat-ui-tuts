@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 
-const styles = {
+const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 500,
+    color: String(theme.primary)
   },
-};
+});
 
 function typographyV1Theme(theme) {
   return createMuiTheme({

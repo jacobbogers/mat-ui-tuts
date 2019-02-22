@@ -1,14 +1,14 @@
 # todo list
 
 | Component              | demo | analyzed source | build |
-|------------------------|------|-----------------|-------|
-| app bar                |      |                 |       |
-| Avatar                 |      |                 |       |
-| Backdrop               |      |                 |       |
-| Badge                  |      |                 |       |
-| BottomNavigation       |      |                 |       |
-| BottomNavigationAction |      |                 |       |
-| Button                 |      |                 |       |
+| ---------------------- | ---- | --------------- | ----- |
+| app bar                | x    |                 |       |
+| Avatar                 | x    |                 |       |
+| Backdrop               | ?    |                 |       |
+| Badge                  | x    |                 |       |
+| BottomNavigation       | P    |                 |       |
+| BottomNavigationAction | P    |                 |       |
+| Button                 | x    |                 |       |
 | ButtonBase             |      |                 |       |
 | Card                   |      |                 |       |
 | CardAction             |      |                 |       |
@@ -43,3 +43,4 @@
 | GridList               |      |                 |       |
 | GirdListTile           |      |                 |       |
 | Grow                   |      |                 |       |
+| Typography             |      |                 |       |
