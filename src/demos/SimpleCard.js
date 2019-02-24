@@ -18,7 +18,7 @@ const styles = {
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+    fontSize: 14
   },
   pos: {
     marginBottom: 12,
@@ -49,7 +49,7 @@ function SimpleCard(props) {
           well meaning and kindly.
           <br />
           {'"a benevolent smile"'}
-        </Typography>
+  </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>

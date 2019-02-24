@@ -3,7 +3,50 @@ const fetch = require('node-fetch');
 const xpath = require('xpath');
 const tidy = require('htmltidy').tidy;
 const dom = require('xmldom').DOMParser;
+/**
+ * 
+ * form : {
+   action:"/cgi-bin/sblogin/login.cgi",
+   method: "POST",
+   name: "login",
+}
+ onsubmit saveForm(this) id = "login"
 
+input elements:
+
+name="screenres"
+type="hidden"
+value="1920x1080"
+
+name=goodpage
+type=hidden
+value=/members/
+
+name=uname
+type=TEXT
+
+name=pword
+type=password
+
+name=turing
+type=TEXT
+
+getElementById
+<img name="turingimage" id="turingimage" src="/cgi-bin/sblogin/turingimage.cgi?125335">
+
+name=savepassword
+type=checkbox
+checked
+
+
+name=Submit1
+type=Submit
+value="Login"
+
+
+
+ * 
+ */
 /* about chunk transfer encoding 
   https://en.wikipedia.org/wiki/Chunked_transfer_encoding
 

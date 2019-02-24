@@ -20,11 +20,13 @@ import TypographyDisplay from './demos/TypographyDisplay';
 import NextTypes from './demos/NextTypes';
 import SimpleBottomNavigationHooks from './demos/BottomNavigatorHooks';
 import CustomButton from './demos/CustomButton';
-import SimpleCard from './demos/SimpleCard';
+import SimpleCard1 from './demos/SimpleCard';
+import SimpleCard2 from './demos/cards/simple';
 
 
 import 'typeface-roboto';
 import './app.scss';
+import { InputLabel } from '@material-ui/core';
 //import 'material-icons';
 
 const styles = () => ({
@@ -33,10 +35,16 @@ const styles = () => ({
 		justifyContent: 'flex-start',
 		flexDirection: 'column',
 		alignItems:'center'
+	},
+	main2:{
+		display: 'flex',
+		justifyContent: 'flex-start',
+		flexDirection: 'row',
+		alignItems:'center'
 	}
 });
 
-const App = withStyles(styles)(({ classes: { main } }) => (
+const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 	<div className={main}>
 		<Backdrop />
 		<PrimaryFieldAppBar />
@@ -55,7 +63,10 @@ const App = withStyles(styles)(({ classes: { main } }) => (
 		<NextTypes/>
 		<SimpleBottomNavigationHooks/>
 		<CustomButton/>
-		<SimpleCard />
+		<div className={main2}>
+		<SimpleCard1 />
+		<SimpleCard2 />
+		</div>
 	</div>
 ));
 
