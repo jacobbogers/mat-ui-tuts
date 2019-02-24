@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-import flamepic from '../../food.webp';
+import flamepic from '../../1.webp';
 
 const useStyles = makeStyles({
     root: {
@@ -17,14 +17,14 @@ const useStyles = makeStyles({
         width: 'calc( 200px * 4/3 )',
         margin: 10
     },
-    disabled: {
+   /* disabled: {
         backgroundBlendMode: 'darken'
-    }
+    }*/
 });
 
 function CustomButton(){
     const classes = useStyles();
-    return <ButtonBase disabled classes={classes}></ButtonBase>
+    return <ButtonBase classes={classes}></ButtonBase>
 }
 
 export default CustomButton;
