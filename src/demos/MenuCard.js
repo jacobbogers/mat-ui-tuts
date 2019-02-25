@@ -19,7 +19,10 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const paella = require('../../paella.jpg');
 
-const styles = theme => ({
+
+const styles = theme => {
+  console.log(theme);
+  return ({
   card: {
     maxWidth: 400,
   },
@@ -43,13 +46,18 @@ const styles = theme => ({
     backgroundColor: red[500],
   },
 });
+}
 
 class RecipeReviewCard extends React.Component {
-  state = { expanded: false };
+  constructor (props) {
+    super(props)
+    this.state = { expanded: false };
+    this.handleExpandClick = this.handleExpandClick.bind(this);
+  }  
 
-  handleExpandClick = () => {
+  handleExpandClick () {
     this.setState(state => ({ expanded: !state.expanded }));
-  };
+  }
 
   render() {
     const { classes } = this.props;
@@ -89,9 +97,7 @@ class RecipeReviewCard extends React.Component {
             <ShareIcon />
           </IconButton>
           <IconButton
-            className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expanded,
-            })}
+            className={`${classes.expand} ${this.state.expanded ? classes.expandOpen : ''}`}
             onClick={this.handleExpandClick}
             aria-expanded={this.state.expanded}
             aria-label="Show more"
@@ -134,5 +140,6 @@ class RecipeReviewCard extends React.Component {
 RecipeReviewCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
 
 export default withStyles(styles)(RecipeReviewCard);

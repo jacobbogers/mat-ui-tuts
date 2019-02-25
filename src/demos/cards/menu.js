@@ -19,6 +19,7 @@ const paella = require('../../../paella.jpg');
 
 const useStyles = makeStyles(function(theme){
  
+  
   console.log('theme from useTheme', Object.getOwnPropertyNames(theme))
   return (
     {
@@ -35,16 +36,17 @@ const useStyles = makeStyles(function(theme){
     expand: {
       transform: 'rotate(0deg)',
       marginLeft: 'auto',
+      transition: 'transform  150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
     },
     expandOpen: {
       transform: 'rotate(180deg)',
     },
     avatar: {
-      backgroundColor: red[500],
+      backgroundColor: red[800],
     },
   });
 });
-
+//👨‍🎓
 function CardWithHooks(props){
   console.log(Object.getOwnPropertyNames(props));
   const [ expanded, setExpanded ] = useState(false);
@@ -54,23 +56,22 @@ function CardWithHooks(props){
       <Card className={classes.card}>
         <CardHeader
           avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              R
-            </Avatar>
+            <Avatar aria-label="Recipe" className={classes.avatar}>📖</Avatar>
           }
           action={
-            <IconButton>
-              <MoreVertIcon />
-            </IconButton>
-          }
+                  <IconButton>
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+          
           title="Shrimp and Chorizo Paella"
           subheader="September 14, 2016"
-        />
-        <CardMedia
+              />
+        {<CardMedia
           className={classes.media}
           image={paella}
           title="Paella dish"
-        />
+        />}
         <CardContent>
           <Typography component="p">
             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -85,10 +86,8 @@ function CardWithHooks(props){
             <ShareIcon />
           </IconButton>
           <IconButton
-            className={`${classes.expand}${expanded ? classes.expandOpen: ''}`}
-            onClick={() => {
-              setExpanded(!expanded);
-            }}
+            className={`${classes.expand} ${expanded ? classes.expandOpen: ''}`}
+            onClick={() => setExpanded(!expanded)}
             aria-expanded={expanded}
             aria-label="Show more"
           >
