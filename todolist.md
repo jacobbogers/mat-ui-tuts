@@ -10,10 +10,10 @@
 | BottomNavigationAction | P    |                 |       |
 | Button                 | D    |                 |       |
 | ButtonBase             | P    |                 |       |
-| Card                   |      |                 |       |
-| CardAction             |      |                 |       |
-| CardContent            |      |                 |       |
-| CardHeader             |      |                 |       |
+| Card                   | M    |                 |       |
+| CardAction             | M    |                 |       |
+| CardContent            | M    |                 |       |
+| CardHeader             | M    |                 |       |
 | CardMedia              |      |                 |       |
 | Checkbox               |      |                 |       |
 | Chip                   |      |                 |       |
