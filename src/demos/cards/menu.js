@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -17,35 +17,39 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const paella = require('../../../paella.jpg');
 
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 400,
-  },
-  media: {
-    height:0,
-    paddingTop: '56.25%', // 16:9
-  },
-  actions: {
-    display: 'flex',
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    //transition: theme.transitions.create('transform', {   duration: theme.transitions.duration.shortest  }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
+const useStyles = makeStyles(function(theme){
+ 
+  console.log('theme from useTheme', Object.getOwnPropertyNames(theme))
+  return (
+    {
+      card: {
+      maxWidth: 400,
+    },
+    media: {
+      height: 0,
+      paddingTop: '56.25%', // 16:9
+    },
+    actions: {
+      display: 'flex',
+    },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
+    avatar: {
+      backgroundColor: red[500],
+    },
+  });
 });
 
-function RecipeReviewCard(){
-
+function CardWithHooks(props){
+  console.log(Object.getOwnPropertyNames(props));
   const [ expanded, setExpanded ] = useState(false);
   const classes = useStyles();
-  
+ 
    return (
       <Card className={classes.card}>
         <CardHeader
@@ -82,7 +86,9 @@ function RecipeReviewCard(){
           </IconButton>
           <IconButton
             className={`${classes.expand}${expanded ? classes.expandOpen: ''}`}
-            onClick={()=> setExpanded(!expanded)}
+            onClick={() => {
+              setExpanded(!expanded);
+            }}
             aria-expanded={expanded}
             aria-label="Show more"
           >
@@ -120,6 +126,16 @@ function RecipeReviewCard(){
       </Card>
     );
   }
+
+function RecipeReviewCard(props) {
+  console.log(Object.getOwnPropertyNames(props));
+  return (
+    <ThemeProvider theme={{}}>
+      <CardWithHooks />
+    </ThemeProvider>
+  );
+}
+
 
 
 export default RecipeReviewCard;

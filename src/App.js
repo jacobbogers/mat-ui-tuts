@@ -1,4 +1,3 @@
-
 // 3rd party
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -24,10 +23,9 @@ import SimpleCard1 from './demos/SimpleCard';
 import SimpleCard2 from './demos/cards/simple';
 import Menu1 from './demos/MenuCard';
 import Menu2 from './demos/cards/menu';
-
 import 'typeface-roboto';
 import './app.scss';
-import { InputLabel } from '@material-ui/core';
+
 //import 'material-icons';
 
 const styles = () => ({
@@ -35,13 +33,19 @@ const styles = () => ({
 		display: 'flex',
 		justifyContent: 'flex-start',
 		flexDirection: 'column',
-		alignItems:'center'
+		alignItems: 'center'
 	},
-	main2:{
+	main2: {
+		display: 'flex',
+		justifyContent: 'center',
+		flexDirection: 'row',
+		alignItems: 'center'
+	},
+	main3: {
 		display: 'flex',
 		justifyContent: 'flex-start',
 		flexDirection: 'row',
-		alignItems:'flex-start'
+		alignItems: 'flex-start'
 	}
 });
 
@@ -61,17 +65,17 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 			<DotBadge />
 		</div>
 		<TypographyDisplay />
-		<NextTypes/>
-		<SimpleBottomNavigationHooks/>
-		<CustomButton/>
+		<NextTypes />
+		<SimpleBottomNavigationHooks />
+		<CustomButton />
 		<div className={main2}>
-		<SimpleCard1 />
-		<SimpleCard2 />
+			<SimpleCard1 />
+			<SimpleCard2 />
 		</div>
 		<div className={main2}>
 			<Menu1 />
 			<Menu2 />
-		</div>	
+		</div>
 	</div>
 ));
 
