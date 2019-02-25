@@ -22,7 +22,8 @@ import SimpleBottomNavigationHooks from './demos/BottomNavigatorHooks';
 import CustomButton from './demos/CustomButton';
 import SimpleCard1 from './demos/SimpleCard';
 import SimpleCard2 from './demos/cards/simple';
-
+import Menu1 from './demos/MenuCard';
+import Menu2 from './demos/cards/menu';
 
 import 'typeface-roboto';
 import './app.scss';
@@ -40,7 +41,7 @@ const styles = () => ({
 		display: 'flex',
 		justifyContent: 'flex-start',
 		flexDirection: 'row',
-		alignItems:'center'
+		alignItems:'flex-start'
 	}
 });
 
@@ -67,6 +68,10 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<SimpleCard1 />
 		<SimpleCard2 />
 		</div>
+		<div className={main2}>
+			<Menu1 />
+			<Menu2 />
+		</div>	
 	</div>
 ));
 

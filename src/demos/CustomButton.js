@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-import flamepic from '../../1.webp';
+import flamepic from '../../The_Trolls_Tongue.jpg';
 
 const useStyles = makeStyles({
     root: {
