@@ -23,6 +23,10 @@ import SimpleCard1 from './demos/SimpleCard';
 import SimpleCard2 from './demos/cards/simple';
 import Menu1 from './demos/MenuCard';
 import Menu2 from './demos/cards/menu';
+import RadioButtons1 from './demos/RadioButtons';
+import RadioButtons2 from './demos/buttons/radios1';
+import CheckBoxes1 from './demos/CheckBoxes';
+import CheckBoxes2 from './demos/buttons/checks';
 import 'typeface-roboto';
 import './app.scss';
 
@@ -75,6 +79,14 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<div className={main2}>
 			<Menu1 />
 			<Menu2 />
+		</div>
+		<div className={main2}>
+		<RadioButtons1 />
+		<RadioButtons2 />
+		</div>
+		<div className={main2}>
+		<CheckBoxes1 />
+		<CheckBoxes2 />
 		</div>
 	</div>
 ));
