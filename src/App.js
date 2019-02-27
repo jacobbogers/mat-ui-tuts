@@ -27,6 +27,8 @@ import RadioButtons1 from './demos/RadioButtons';
 import RadioButtons2 from './demos/buttons/radios1';
 import CheckBoxes1 from './demos/CheckBoxes';
 import CheckBoxes2 from './demos/buttons/checks';
+import CustomChecks from './demos/CustomCheck';
+import CheckboxLabelsHooks from './demos/buttons/customchecks'
 import 'typeface-roboto';
 import './app.scss';
 
@@ -87,6 +89,10 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<div className={main2}>
 		<CheckBoxes1 />
 		<CheckBoxes2 />
+		</div>
+		<div className={main}>
+		<CustomChecks/>
+		<CheckboxLabelsHooks/>
 		</div>
 	</div>
 ));

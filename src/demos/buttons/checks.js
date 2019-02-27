@@ -6,7 +6,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 function useCheckStates(nrSlots){
     const setters = Array.from({ length: nrSlots }).map(()=> useState(false));
     const allValues = setters.map(([v]) => v);
-    const allSetters = setters.map(([_,s]) => s);
+    const allSetters = setters.map(([v,s]) => () => s(!v));
     return [allValues, allSetters];
 }
 
