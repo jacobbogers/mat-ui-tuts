@@ -30,8 +30,10 @@ const useStyles = makeStyles({
   checked: {},
 });
 
+const status = [true, true, false, false, true, true, true, false, false];
+
 function useCheckStates(nrSlots){
-    const setters = Array.from({ length: nrSlots }).map(()=> useState(false));
+    const setters = Array.from({ length: nrSlots }).map((_,idx)=> useState(status[idx]));
     const allValues = setters.map(([v]) => v);
     const allSetters = setters.map(([v,s]) => () => s(!v));
     return [allValues, allSetters];
@@ -51,8 +53,8 @@ function CheckboxLabelsHooks(){
     const ctrl3 = <Checkbox checked={vals[2]} onChange={sets[2]} value="cC"  />;
     const ctrl4 = <Checkbox checked={vals[3]} onChange={sets[3]} value="cD" />
     const ctrl5 = <Checkbox checked={vals[4]} onChange={sets[4]} value="cE" />
-    const ctrl6 = <Checkbox checked={vals[5]} onChange={sets[5]} value="cF" intermediate />
-    const ctrl7 = <Checkbox checked={vals[6]} onChange={sets[6]} value="cG" intermediate classes={{ root, checked }}/>
+    const ctrl6 = <Checkbox checked={vals[5]} onChange={sets[5]} value="cF" indeterminate />
+    const ctrl7 = <Checkbox checked={vals[6]} onChange={sets[6]} value="cG" classes={{ root, checked }}/>
     const ctrl8 = <Checkbox checked={vals[7]} onChange={sets[7]} value="cH" checkedIcon={<Favorite />}  icon={<FavoriteBorder />} />
     const ctrl9 = 
         <Checkbox 
