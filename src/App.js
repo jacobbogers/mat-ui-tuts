@@ -29,6 +29,8 @@ import CheckBoxes1 from './demos/CheckBoxes';
 import CheckBoxes2 from './demos/buttons/checks';
 import CustomChecks from './demos/CustomCheck';
 import CheckboxLabelsHooks from './demos/buttons/customchecks'
+import FormGroupCheck from './demos/FormGroupCheck';
+import FormGroupCheck2 from './demos/buttons/formgroupcheck';
 import 'typeface-roboto';
 import './app.scss';
 
@@ -93,6 +95,10 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<div className={main}>
 		<CustomChecks/>
 		<CheckboxLabelsHooks/>
+		</div>
+		<div className={main}>
+			<FormGroupCheck/>
+			<FormGroupCheck2/>
 		</div>
 	</div>
 ));
