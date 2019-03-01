@@ -12,7 +12,11 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
-const themeX = createMuiTheme({});
+const themeX = createMuiTheme({
+	typography: {
+		useNextVariants: true
+	}
+});
 
 const useStyles = makeStyles(theme => {
 	console.log(theme);
@@ -26,20 +30,18 @@ const useStyles = makeStyles(theme => {
 	};
 });
 
-
-
 function CheckboxesGroup() {
 	/*const [error, list, setter] = useCheckStates({
 		gilad: true,
 		jason: false,
 		antoine: false
     });*/
-    const [gilad, setGilad] = useState(true);
-    const [jason, setJason] = useState(false);
-    const [antoine, setAntoine] = useState(false);
+	const [gilad, setGilad] = useState(true);
+	const [jason, setJason] = useState(false);
+	const [antoine, setAntoine] = useState(false);
 
 	const classes = useStyles();
-    const error = gilad + jason + antoine !== 2;
+	const error = gilad + jason + antoine !== 2;
 
 	return (
 		<div className={classes.root}>
@@ -47,20 +49,16 @@ function CheckboxesGroup() {
 				<FormLabel component="legend">Assign responsibility</FormLabel>
 				<FormGroup>
 					<FormControlLabel
-						control={
-							<Checkbox checked={gilad} onChange={() => setGilad(!gilad)} value="gilad" />
-						}
+						control={<Checkbox checked={gilad} onChange={() => setGilad(!gilad)} value="gilad" />}
 						label="Gilad Gray"
 					/>
 					<FormControlLabel
-						control={
-							<Checkbox checked={jason} onChange={() => setJason(!jason)} value="jason" />
-						}
+						control={<Checkbox checked={jason} onChange={() => setJason(!jason)} value="jason" />}
 						label="Jason Killian"
 					/>
 					<FormControlLabel
 						control={
-							<Checkbox checked={antoine} onChange={()=>setAntoine(!antoine)} value="antoine" />
+							<Checkbox checked={antoine} onChange={() => setAntoine(!antoine)} value="antoine" />
 						}
 						label="Antoine Llorca"
 					/>
@@ -71,16 +69,16 @@ function CheckboxesGroup() {
 				<FormLabel component="legend">Pick two</FormLabel>
 				<FormGroup>
 					<FormControlLabel
-						control={<Checkbox checked={gilad} onChange={()=>setGilad(!gilad)} value="gilad" />}
+						control={<Checkbox checked={gilad} onChange={() => setGilad(!gilad)} value="gilad" />}
 						label="Gilad Gray"
 					/>
 					<FormControlLabel
-						control={<Checkbox checked={jason} onChange={()=>setJason(!jason)} value="jason" />}
+						control={<Checkbox checked={jason} onChange={() => setJason(!jason)} value="jason" />}
 						label="Jason Killian"
 					/>
 					<FormControlLabel
 						control={
-							<Checkbox checked={antoine} onChange={()=>setAntoine(!antoine)} value="antoine" />
+							<Checkbox checked={antoine} onChange={() => setAntoine(!antoine)} value="antoine" />
 						}
 						label="Antoine Llorca"
 					/>

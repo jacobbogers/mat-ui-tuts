@@ -34,7 +34,8 @@ function Checkboxes (){
             value="checkedF"
             indeterminate
           />
-          <Checkbox checked={ values[6] } onChange={() => setters[6](!values[6])} defaultChecked color="default" value="checkedG" />
+          <Checkbox //checked={ values[6] }
+          onChange={() => setters[6](!values[6])} defaultChecked color="default" value="checkedG" />
         </div>
       );
 }
