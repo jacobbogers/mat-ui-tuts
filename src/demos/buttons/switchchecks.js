@@ -2,15 +2,16 @@ import React , { useReducer } from 'react';
 import Switch from '@material-ui/core/Switch';
 
 
-function reducer(state, action){
+function reducer(state, a){
     // is there a change?
     const { map } = state;
-    const found = map.get(action.type);
-    if (!found || action.value !== found){
-        map.set(action.type, action.value);
+    const found = map.get(a.type);
+    if (found  === undefined) {
+        map.set(a.type, a.value);
         return { map };// new obj
     }
-    return state; // return same object nothing changed
+    map.set(a.type, a.value);
+    return { map }; 
 }
 
 function Switches() {
@@ -20,6 +21,7 @@ function Switches() {
     const handleChange = name => event => {
        dispatch({ type:name, value: event.target.checked });
      };
+     
     const { map } = state;
      return (
       <div>
@@ -37,7 +39,7 @@ function Switches() {
         <Switch value="checkedC" />
         <Switch disabled value="checkedD" />
         <Switch disabled checked value="checkedE" />
-    <Switch value="checkedF" color="default" />
+        <Switch value="checkedF" color="default" />
       </div>
     );
 }

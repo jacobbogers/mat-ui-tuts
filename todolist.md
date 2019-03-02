@@ -1,7 +1,7 @@
 # todo list
 
 | Component              | demo | analyzed source | build |
-| ---------------------- | ---- | --------------- | ----- |
+|------------------------|------|-----------------|-------|
 | app bar                | x    |                 |       |
 | Avatar                 | x    |                 |       |
 | Backdrop               | ?    |                 |       |
@@ -14,25 +14,25 @@
 | CardAction             | M    |                 |       |
 | CardContent            | M    |                 |       |
 | CardHeader             | M    |                 |       |
-| CardMedia              |      |                 |       |
-| Checkbox               |      |                 |       |
-| Chip                   |      |                 |       |
-| CirculatProgress       |      |                 |       |
-| ClickAwayListener      |      |                 |       |
-| Collapse               |      |                 |       |
-| CssBaseline            |      |                 |       |
-| Dialog                 |      |                 |       |
-| DialogActions          |      |                 |       |
-| DialogContent          |      |                 |       |
-| DialogContentText      |      |                 |       |
-| DialogTitle            |      |                 |       |
-| Divider                |      |                 |       |
-| Drawer                 |      |                 |       |
-| ExpansionPanel         |      |                 |       |
-| ExpansionPanelActions  |      |                 |       |
-| ExpansionPanelDetails  |      |                 |       |
-| ExpansionPanelSummary  |      |                 |       |
-| Fab                    |      |                 |       |
+| CardMedia              | D    |                 |       |
+| Checkbox               | D    |                 |       |
+| Chip                   | D    |                 |       |
+| CirculatProgress       | D    |                 |       |
+| ClickAwayListener      | D    |                 |       |
+| Collapse               | D    |                 |       |
+| CssBaseline            | D    |                 |       |
+| Dialog                 | D    |                 |       |
+| DialogActions          | ?    |                 |       |
+| DialogContent          | ?    |                 |       |
+| DialogContentText      | ?    |                 |       |
+| DialogTitle            | ?    |                 |       |
+| Divider                | D    |                 |       |
+| Drawer                 | A    |                 |       |
+| ExpansionPanel         | A    |                 |       |
+| ExpansionPanelActions  | A    |                 |       |
+| ExpansionPanelDetails  | A    |                 |       |
+| ExpansionPanelSummary  | A    |                 |       |
+| Fab                    | D    |                 |       |
 | FilledInput            |      |                 |       |
 | FormControl            |      |                 |       |
 | FormControlLabel       |      |                 |       |

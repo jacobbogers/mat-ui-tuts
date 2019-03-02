@@ -34,6 +34,10 @@ import FormGroupCheck from './demos/FormGroupCheck';
 import FormGroupCheck2 from './demos/buttons/formgroupcheck';
 import SwitchCheckBox from './demos/SwitchCheckBox';
 import SwitchCheckBox2 from './demos/buttons/switchchecks';
+import SwitchLabels from './demos/SwitchLabels';
+import SwitchLabels1 from './demos/buttons/switch-labels';
+import IOSSwitch from './demos/IOSSwitch';
+import Chip1 from './demos/Chip1';
 
 import 'typeface-roboto';
 import './app.scss';
@@ -45,13 +49,19 @@ const styles = () => ({
 		display: 'flex',
 		justifyContent: 'flex-start',
 		flexDirection: 'column',
-		alignItems: 'center'
+		alignItems: 'center',
+		"& > div:first-child": {
+			borderBottom: "1px solid gray"
+		}
 	},
 	main2: {
 		display: 'flex',
 		justifyContent: 'center',
 		flexDirection: 'row',
-		alignItems: 'center'
+		alignItems: 'center',
+		"& > div:first-child": {
+			borderRight: "1px solid gray"
+		}
 	},
 	main3: {
 		display: 'flex',
@@ -108,6 +118,16 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 			<SwitchCheckBox/>
 			<SwitchCheckBox2/>
 		</div>
+		<div className={main2}>
+			<SwitchLabels/>
+			<SwitchLabels1 />
+		</div>
+		<div className={main2}>
+			<IOSSwitch />
+		</div>
+		<div className={main2}>
+		<Chip1 />
+	</div>
 	</div>
 ));
 
