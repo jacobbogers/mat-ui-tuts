@@ -8,6 +8,7 @@ import SimpleAppBar from './demos/SimpleAppBar';
 import ButtonAppBar from './demos/ButtonAppBar';
 import PrimaryFieldAppBar from './demos/PrimaryFieldAppBar';
 import Buttons01 from './demos/Buttons01';
+
 import Fabs from './demos/Fabs';
 import IconButtons from './demos/IconButtons';
 import Avatars from './demos/Avatars';
@@ -29,6 +30,11 @@ import CheckBoxes1 from './demos/CheckBoxes';
 import CheckBoxes2 from './demos/buttons/checks';
 import CustomChecks from './demos/CustomCheck';
 import CheckboxLabelsHooks from './demos/buttons/customchecks'
+import FormGroupCheck from './demos/FormGroupCheck';
+import FormGroupCheck2 from './demos/buttons/formgroupcheck';
+import SwitchCheckBox from './demos/SwitchCheckBox';
+import SwitchCheckBox2 from './demos/buttons/switchchecks';
+
 import 'typeface-roboto';
 import './app.scss';
 
@@ -93,6 +99,14 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<div className={main}>
 		<CustomChecks/>
 		<CheckboxLabelsHooks/>
+		</div>
+		<div className={main}>
+			<FormGroupCheck/>
+			<FormGroupCheck2/>
+		</div>
+		<div className={main2}>
+			<SwitchCheckBox/>
+			<SwitchCheckBox2/>
 		</div>
 	</div>
 ));
