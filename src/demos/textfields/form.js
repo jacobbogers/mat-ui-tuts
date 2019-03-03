@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 const styles = theme => ({
   container: {
     display: 'flex',
-    flexDirection:'row',
+    flexDirection:'column',
     flexWrap: 'wrap',
   },
   textField: {
@@ -16,9 +16,9 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
     width: 200,
   },
-  dense: {
+  /*dense: {
     marginTop: 19,
-  },
+  },*/
   menu: {
     width: 200,
   },
@@ -128,7 +128,7 @@ class TextFields extends React.Component {
           id="standard-dense"
           label="Dense"
           className={classNames(classes.textField, classes.dense)}
-          margin="dense"
+          margin="none"
         />
 
         <TextField
