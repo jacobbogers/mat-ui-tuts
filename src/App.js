@@ -39,6 +39,7 @@ import SwitchLabels1 from './demos/buttons/switch-labels';
 import IOSSwitch from './demos/IOSSwitch';
 import Chip1 from './demos/Chip1';
 import Form1 from './demos/textfields/form';
+import ImageGridList from './demos/grids/ImageGridList';
 
 import 'typeface-roboto';
 import './app.scss';
@@ -130,6 +131,10 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<Chip1 />
 	</div>
 	<Form1 />
+	<div className={main}>
+	<ImageGridList />
+	</div>
+	{ /*<!-- root -->*/ }
 	</div>
 ));
 
