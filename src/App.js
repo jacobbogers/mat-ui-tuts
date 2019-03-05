@@ -29,7 +29,7 @@ import RadioButtons2 from './demos/buttons/radios1';
 import CheckBoxes1 from './demos/CheckBoxes';
 import CheckBoxes2 from './demos/buttons/checks';
 import CustomChecks from './demos/CustomCheck';
-import CheckboxLabelsHooks from './demos/buttons/customchecks'
+import CheckboxLabelsHooks from './demos/buttons/customchecks';
 import FormGroupCheck from './demos/FormGroupCheck';
 import FormGroupCheck2 from './demos/buttons/formgroupcheck';
 import SwitchCheckBox from './demos/SwitchCheckBox';
@@ -52,8 +52,8 @@ const styles = () => ({
 		justifyContent: 'flex-start',
 		flexDirection: 'column',
 		alignItems: 'center',
-		"& > div:first-child": {
-			borderBottom: "1px solid gray"
+		'& > div:first-child': {
+			borderBottom: '1px solid gray'
 		}
 	},
 	main2: {
@@ -61,8 +61,8 @@ const styles = () => ({
 		justifyContent: 'center',
 		flexDirection: 'row',
 		alignItems: 'center',
-		"& > div:first-child": {
-			borderRight: "1px solid gray"
+		'& > div:first-child': {
+			borderRight: '1px solid gray'
 		}
 	},
 	main3: {
@@ -101,40 +101,43 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 			<Menu2 />
 		</div>
 		<div className={main2}>
-		<RadioButtons1 />
-		<RadioButtons2 />
+			<RadioButtons1 />
+			<RadioButtons2 />
 		</div>
 		<div className={main2}>
-		<CheckBoxes1 />
-		<CheckBoxes2 />
+			<CheckBoxes1 />
+			<CheckBoxes2 />
 		</div>
 		<div className={main}>
-		<CustomChecks/>
-		<CheckboxLabelsHooks/>
+			<CustomChecks />
+			<CheckboxLabelsHooks />
 		</div>
 		<div className={main}>
-			<FormGroupCheck/>
-			<FormGroupCheck2/>
+			<FormGroupCheck />
+			<FormGroupCheck2 />
 		</div>
 		<div className={main2}>
-			<SwitchCheckBox/>
-			<SwitchCheckBox2/>
+			<SwitchCheckBox />
+			<SwitchCheckBox2 />
 		</div>
 		<div className={main2}>
-			<SwitchLabels/>
+			<SwitchLabels />
 			<SwitchLabels1 />
 		</div>
 		<div className={main2}>
 			<IOSSwitch />
 		</div>
 		<div className={main2}>
-		<Chip1 />
-	</div>
-	<Form1 />
-	<div className={main}>
-	<ImageGridList />
-	</div>
-	{ /*<!-- root -->*/ }
+			<Chip1 />
+		</div>
+		<div>
+			<Form1 />
+		</div>
+		<div className={main}>
+			<ImageGridList />
+		</div>
+		{/*
+	<!-- root -->*/}
 	</div>
 ));
 
