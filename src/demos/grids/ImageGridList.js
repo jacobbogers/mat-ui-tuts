@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import createTileData from './tileData';
+import tileData from './tileData';
 
 const styles = theme => ({
   root: {
@@ -38,7 +38,7 @@ const styles = theme => ({
  * ];
  */
 
-const tileData = createTileData();
+
 
 function ImageGridList(props) {
   const { classes } = props;

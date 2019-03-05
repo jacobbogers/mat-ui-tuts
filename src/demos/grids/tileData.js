@@ -1,72 +1,69 @@
 const tileData = [
     {
-      img: '/static/images/grid-list/breakfast.jpg',
+      img: require('./images/breakfast.jpg'),
       title: 'Breakfast',
       author: 'jill111',
       cols: 2,
       featured: true,
     },
     {
-      img: '/static/images/grid-list/burgers.jpg',
+      img: require('./images/burgers.jpg'),
       title: 'Tasty burger',
       author: 'director90',
     },
     {
-      img: '/static/images/grid-list/camera.jpg',
+      img: require('./images/camera.jpg'),
       title: 'Camera',
       author: 'Danson67',
     },
     {
-      img: '/static/images/grid-list/morning.jpg',
+      img: require('./images/morning.jpg'),
       title: 'Morning',
       author: 'fancycrave1',
       featured: true,
     },
     {
-      img: '/static/images/grid-list/hats.jpg',
+      img: require('./images/hats.jpg'),
       title: 'Hats',
       author: 'Hans',
     },
     {
-      img: '/static/images/grid-list/honey.jpg',
+      img: require('./images/honey.jpg'),
       title: 'Honey',
       author: 'fancycravel',
     },
     {
-      img: '/static/images/grid-list/vegetables.jpg',
+      img: require('./images/vegetables.jpg'),
       title: 'Vegetables',
       author: 'jill111',
       cols: 2,
     },
     {
-      img: '/static/images/grid-list/plant.jpg',
+      img: require('./images/plant.jpg'),
       title: 'Water plant',
       author: 'BkrmadtyaKarki',
     },
     {
-      img: '/static/images/grid-list/mushroom.jpg',
+      img: require('./images/mushroom.jpg'),
       title: 'Mushrooms',
       author: 'PublicDomainPictures',
     },
     {
-      img: '/static/images/grid-list/olive.jpg',
+      img: require('./images/olive.jpg'),
       title: 'Olive oil',
       author: 'congerdesign',
     },
     {
-      img: '/static/images/grid-list/star.jpg',
+      img: require('./images/star.jpg'),
       title: 'Sea star',
       cols: 2,
       author: '821292',
     },
     {
-      img: '/static/images/grid-list/bike.jpg',
+      img: require('./images/bike.jpg'),
       title: 'Bike',
       author: 'danfador',
     },
   ];
   
-  export default function(){
-    return tileData.map(r => ({...r, img: require('./images/'+r.img)})) 
-  }
-  
+  export default tileData;
