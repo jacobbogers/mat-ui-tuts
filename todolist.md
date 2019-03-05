@@ -43,7 +43,7 @@
 | Grid                   | D    | [doc][grid-doc]                           |
 | GridList               | P    |                                           |
 | GridListTile           | P    | check the coverage of an image (example ) |
-| Grow                   |      | [demo][grow-demo]                         |
+| Grow                   | D    | [demo][grow-demo]                         |
 | idde                   |      |                                           |
 | co                     |      |                                           |
 | conButto               |      |                                           |

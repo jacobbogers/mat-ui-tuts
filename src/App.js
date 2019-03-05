@@ -40,9 +40,11 @@ import IOSSwitch from './demos/IOSSwitch';
 import Chip1 from './demos/Chip1';
 import Form1 from './demos/textfields/form';
 import ImageGridList from './demos/grids/ImageGridList';
+import GrowDemo from './demos/Grow';
 
 import 'typeface-roboto';
 import './app.scss';
+import { Grid } from '@material-ui/core';
 
 //import 'material-icons';
 
@@ -135,6 +137,9 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		</div>
 		<div className={main}>
 			<ImageGridList />
+		</div>
+		<div className={main}>
+		<GrowDemo/>
 		</div>
 		{/*
 	<!-- root -->*/}
