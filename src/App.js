@@ -41,7 +41,10 @@ import Chip1 from './demos/Chip1';
 import Form1 from './demos/textfields/form';
 import ImageGridList from './demos/grids/ImageGridList';
 import GrowDemo from './demos/Grow';
-
+import BPHelperHook from './demos/breakpoints/breakpoint-helper-hook';
+import BPSizesHOC from './demos/breakpoints/sizes';
+import HiddenHooks from './demos/hidden/hidden-hook';
+import ThemeHook from './demos/breakpoints/use-theme-hook';
 import 'typeface-roboto';
 import './app.scss';
 import { Grid } from '@material-ui/core';
@@ -140,6 +143,10 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		</div>
 		<div className={main}>
 		<GrowDemo/>
+		<BPHelperHook/>
+		<BPSizesHOC/>
+		<ThemeHook />
+		<HiddenHooks/>
 		</div>
 		{/*
 	<!-- root -->*/}
