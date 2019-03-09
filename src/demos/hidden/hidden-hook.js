@@ -1,27 +1,16 @@
 // react
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 //material
 import { makeStyles, ThemeProvider, useTheme } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 //mate comp
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
-const useWidth = theme => {
-  //const [key] = useState(null);
-  
-  const answers = Object.keys(theme.breakpoints.keys).map(key => useMediaQuery(theme.breakpoints.down(key)));
-
-	return answers;
-}
-/*
-const width =
-[...theme.breakpoints.keys].reverse().reduce((output, key) => {
-  const matches = useMediaQuery(theme.breakpoints.only(key));*/
+import { useWidth } from './useWidth';
 
 const useStyles = makeStyles(theme => ({
 	container: {
@@ -39,26 +28,25 @@ const useStyles = makeStyles(theme => ({
 function Hiddens() {
 	const classes = useStyles();
 	const theme = useTheme();
-  const answers = useWidth(theme);
-  console.log(answers);
+	const info = useWidth(theme);
 
 	return (
 		<div className={classes.root}>
-			<Typography variant="subtitle1">Current width: </Typography>
+			<Typography variant="subtitle1">Current width:{info.width}/{info.media} </Typography>
 			<div className={classes.container}>
-				<Hidden xsUp>
-					<Paper className={classes.paper}>xsUp</Paper>
+				<Hidden xsDown="true">
+					<Paper className={classes.paper}>xsDown</Paper>
 				</Hidden>
-				<Hidden smUp>
+				<Hidden smUp="true">
 					<Paper className={classes.paper}>smUp</Paper>
 				</Hidden>
-				<Hidden mdUp>
+				<Hidden mdUp="true">
 					<Paper className={classes.paper}>mdUp</Paper>
 				</Hidden>
-				<Hidden lgUp>
+				<Hidden lgUp="true">
 					<Paper className={classes.paper}>lgUp</Paper>
 				</Hidden>
-				<Hidden xlUp>
+				<Hidden xlUp="true">
 					<Paper className={classes.paper}>xlUp</Paper>
 				</Hidden>
 			</div>
