@@ -43,10 +43,10 @@
 | GridList               | P    |                                           |
 | GridListTile           | P    | check the coverage of an image (example ) |
 | Grow                   | D    | [demo][grow-demo]                         |
-| Hidden                 |      |                                           |
-| co                     |      |                                           |
-| conButto               |      |                                           |
-| npu                    |      |                                           |
+| Hidden                 | D    |                                           |
+| Icons                  | D    |                                           |
+| IconButton             | D    | see grid list demo                        |
+| Input                  |      | the big one                               |
 | nputAdornmen           |      |                                           |
 | nputBas                |      |                                           |
 | nputLabe               |      |                                           |
