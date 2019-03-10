@@ -48,7 +48,7 @@
 | IconButton              | D    | see grid list demo                        |
 | Input                   |      | the big one                               |
 | InputAdornment          |      |                                           |
-| InputBase               |      |                                           |
+| InputBase               | D    |                                           |
 | InputLabel              | x    |                                           |
 | LinearProgres           |      |                                           |
 | Link                    |      |                                           |

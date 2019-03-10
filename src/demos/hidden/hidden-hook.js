@@ -34,19 +34,19 @@ function Hiddens() {
 		<div className={classes.root}>
 			<Typography variant="subtitle1">Current width:{info.width}/{info.media} </Typography>
 			<div className={classes.container}>
-				<Hidden xsDown="true">
+				<Hidden xsDown={true}>
 					<Paper className={classes.paper}>xsDown</Paper>
 				</Hidden>
-				<Hidden smUp="true">
+				<Hidden smUp={true}>
 					<Paper className={classes.paper}>smUp</Paper>
 				</Hidden>
-				<Hidden mdUp="true">
+				<Hidden mdUp={true}>
 					<Paper className={classes.paper}>mdUp</Paper>
 				</Hidden>
-				<Hidden lgUp="true">
+				<Hidden lgUp={true}>
 					<Paper className={classes.paper}>lgUp</Paper>
 				</Hidden>
-				<Hidden xlUp="true">
+				<Hidden xlUp={true}>
 					<Paper className={classes.paper}>xlUp</Paper>
 				</Hidden>
 			</div>
