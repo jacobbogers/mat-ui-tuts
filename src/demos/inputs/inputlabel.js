@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 // material comps
 import InputBase from '@material-ui/core/InputBase';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormLabel from '@material-ui/core/FormLabel';
+import InputLabel from '@material-ui/core/InputLabel';
+
 //material styles
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -41,15 +42,16 @@ function InputBaseDemoComponent() {
 
 	return (
 		<form className={classes.container} onSubmit={ e => { console.log('%c submit','color:red'); e.preventDefault() }}>
-        <FormLabel error={true} component="legend">Gender 
-        <InputBase 
+        <InputLabel htmFor="id123" Foutlined={true} disableAnimation={false} error={true} >Gender </InputLabel> 
+            <InputBase 
+                id="id123"
                 error={true} 
                 endAdornment={adornment} 
                 placeholder="some text" 
                 value={placeHolderValue} 
                 onChange={(e) =>setPlaceHolderValue(e.target.value)} 
             />
-            </FormLabel> 
+           
         </form>
        
 	);

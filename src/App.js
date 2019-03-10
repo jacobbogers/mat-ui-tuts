@@ -47,6 +47,7 @@ import HiddenHooks from './demos/hidden/hidden-hook';
 import ThemeHook from './demos/breakpoints/use-theme-hook';
 import InputBaseTest from './demos/inputs/inputbaseIsolated';
 import InputBaseWithAdornment from './demos/inputs/inputadornment';
+import InputLabel from './demos/inputs/inputlabel';
 import { Grid } from '@material-ui/core';
 
 import 'typeface-roboto';
@@ -84,6 +85,7 @@ const styles = () => ({
 
 const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 	<div className={main}>
+		<InputLabel />
 		<InputBaseWithAdornment/>
 		<InputBaseTest />
 		<Backdrop />
