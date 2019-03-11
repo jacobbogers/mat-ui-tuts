@@ -46,7 +46,7 @@ import BPSizesHOC from './demos/breakpoints/sizes';
 import HiddenHooks from './demos/hidden/hidden-hook';
 import ThemeHook from './demos/breakpoints/use-theme-hook';
 import InputDemo from './demos/inputs/input';
-
+import LinearDemo from './demos/progression/linear'
 import 'typeface-roboto';
 import './app.scss';
 
@@ -81,6 +81,7 @@ const styles = () => ({
 
 const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 	<div className={main}>
+		<LinearDemo/>
 		<InputDemo/>
 		{/*<InputLabel />
 		<InputBaseWithAdornment/>
