@@ -1,6 +1,7 @@
 import React from 'react';
 
 // material comps
+
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
@@ -24,11 +25,15 @@ const themeGreen = createMuiTheme({
 
 const useStyles = makeStyles( (/*theme*/) => ({
     formControl:{
-        border:'0px solid red',
+        border:'0px solid red'
+    },
+    dense:{
+        marginTop: 19,
     },
 	container: {
         width:200,
         display: 'flex',
+        margin: 6,
         flexDirection: 'column',
         '& > *:not($exempt)':{
             maxWidth:150
@@ -42,15 +47,20 @@ function InputBaseDemoComponent() {
     const classes=  useStyles();
  
 	return (
-		<form className={classes.container} onSubmit={ e => { console.log('%c submit','color:red'); e.preventDefault() }}>
-        <FormControl className={classes.formControl}>
-          <InputLabel variant="outlined" disableAnimation={false} error={false} htmlFor="formatted-text-mask-input">react-text-mask</InputLabel>
+		
+        <FormControl className={`${classes.formControl} ${classes.dense} `}>
+          <InputLabel variant="filled" htmlFor="inputdemo2">react-text-mask</InputLabel>
           <Input
+            disableUnderline={true}
             defaultValue="formcontrol-text"
-            id="formatted-text-mask-input"
+            multiline={true}
+            id="inputdemo2"
+            margin="none"
+            rows={1}
+            rowsMax={5}
           />
         </FormControl>
-        </form>
+        
        
 	);
 }

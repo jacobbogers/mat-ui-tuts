@@ -45,14 +45,10 @@ import BPHelperHook from './demos/breakpoints/breakpoint-helper-hook';
 import BPSizesHOC from './demos/breakpoints/sizes';
 import HiddenHooks from './demos/hidden/hidden-hook';
 import ThemeHook from './demos/breakpoints/use-theme-hook';
-import InputBaseTest from './demos/inputs/inputbaseIsolated';
-import InputBaseWithAdornment from './demos/inputs/inputadornment';
-import InputLabel from './demos/inputs/inputlabel';
-import { Grid } from '@material-ui/core';
+import InputDemo from './demos/inputs/input';
 
 import 'typeface-roboto';
 import './app.scss';
-
 
 //import 'material-icons';
 
@@ -85,9 +81,10 @@ const styles = () => ({
 
 const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 	<div className={main}>
-		<InputLabel />
+		<InputDemo/>
+		{/*<InputLabel />
 		<InputBaseWithAdornment/>
-		<InputBaseTest />
+		<InputBaseTest />*/}
 		<Backdrop />
 		<PrimaryFieldAppBar />
 		<ButtonAppBar />

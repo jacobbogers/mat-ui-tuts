@@ -1,7 +1,7 @@
 # Todo list
 
 | Component               | demo | analyzed source                           |
-|-------------------------|------|-------------------------------------------|
+| ----------------------- | ---- | ----------------------------------------- |
 | app bar                 | x    |                                           |
 | Avatar                  | x    |                                           |
 | Backdrop                | ?    |                                           |
@@ -46,10 +46,10 @@
 | Hidden                  | D    |                                           |
 | Icons                   | D    |                                           |
 | IconButton              | D    | see grid list demo                        |
-| Input                   |      | the big one                               |
+| Input                   | D    | the big one                               |
 | InputAdornment          | D    |                                           |
 | InputBase               | D    |                                           |
-| InputLabel              | x    |                                           |
+| InputLabel              | D    | need "Input" and "FormControl"            |
 | LinearProgres           |      |                                           |
 | Link                    |      |                                           |
 | List                    |      |                                           |
@@ -241,17 +241,14 @@ Name speaks for itself i think
 
 ???
 
-
 #### breakpoints
 
 ##### `theme.breakpoints.up(key) => media query`
 
-This gives something like 
+This gives something like
 
 ```css
-
 ```
-
 
 [grid-doc]: https://material-ui.com/layout/grid/
 [grow-demo]: https://material-ui.com/utils/transitions/#grow
