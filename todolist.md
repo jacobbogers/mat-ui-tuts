@@ -50,10 +50,10 @@
 | InputAdornment          | D    |                                           |
 | InputBase               | D    |                                           |
 | InputLabel              | D    | need "Input" and "FormControl"            |
-| LinearProgres           |      |                                           |
-| Link                    |      |                                           |
-| List                    |      |                                           |
-| ListItem                |      |                                           |
+| LinearProgres           | D    |                                           |
+| Link                    | D    |                                           |
+| List                    | D    |                                           |
+| ListItem                | D    |                                           |
 | ListItemAvatar          |      |                                           |
 | ListItemIcon            |      |                                           |
 | ListItemSecondaryAction |      |                                           |
