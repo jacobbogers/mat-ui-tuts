@@ -1,0 +1,57 @@
+{
+    "$id": "http://doclerholding.com/schemas/eds.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "mq-fragments": {
+        "$comment": "these are 'atomic' types used to configure rabbitmq objects (exchanges and queues)",
+        "rabbit-mq-binding": {
+            
+        },
+        "rabbit-queue-bindings": {
+            "$id": "rabbit-queue-bindings",
+            "type": "array",
+            "minItems":1,
+            "items": {"$ref":"rabbit-mq-binding"}, 
+            "additionalItems": false
+        },
+        "rabbit-queue-retriable": {
+            "$id": "rabbit-queue-retriable",
+            "type": "object",
+            "properties": {
+                "maxRetries": { "type": "number", "multipleOf": 1.0, "minimum": 0, "exclusiveMinimim": true }
+            }
+        },
+        "rabbitmq-type": {
+            "$comment": "type of rabbit queue or exchange",
+            "$id": "rabbitmq-type",
+            "type": {
+                "const":"topic"
+            }
+        },
+        "rabbit-queue-options": {
+            "durable": { "type": "boolean" },
+            "autoDelete": { "type": "boolean" },
+            "retriable": { "$ref": "#rabbit-queue-retriable" }
+        }
+    },
+    "definitions": {
+        "connector-ampq": {
+            "properties": {
+                "queue": {
+                    "$ref": "#/definitions/rabbit-queue"
+                }
+            },
+            "type": "object"
+        },
+        "rabbit-queue": {
+            "properties": {
+                "name": {
+                    "minlength": 3,
+                    "type": "string"
+                },
+                "options": { "$ref": "#rabbit-queue-options" },
+                "bindings": { "$ref": "#rabbit-queue-bindings" }
+            },
+            "type": "object"
+        }
+    }
+}
