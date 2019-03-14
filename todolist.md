@@ -54,11 +54,11 @@
 | Link                    | D    |                                           |
 | List                    | D    |                                           |
 | ListItem                | D    |                                           |
-| ListItemAvatar          |      |                                           |
-| ListItemIcon            |      |                                           |
-| ListItemSecondaryAction |      |                                           |
-| ListItemText            |      |                                           |
-| ListSubheader           |      |                                           |
+| ListItemAvatar          | D    |                                           |
+| ListItemIcon            | D    |                                           |
+| ListItemSecondaryAction | D    |                                           |
+| ListItemText            | D    |                                           |
+| ListSubheader           | D    |                                           |
 | Menu                    |      |                                           |
 | MenuItem                |      |                                           |
 | MenuList                |      |                                           |

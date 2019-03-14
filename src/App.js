@@ -40,6 +40,7 @@ import IOSSwitch from './demos/IOSSwitch';
 import Chip1 from './demos/Chip1';
 import Form1 from './demos/textfields/form';
 import ImageGridList from './demos/grids/ImageGridList';
+import TitleGridList from './demos/grids/TitleBarGridList';
 import GrowDemo from './demos/Grow';
 import BPHelperHook from './demos/breakpoints/breakpoint-helper-hook';
 import BPSizesHOC from './demos/breakpoints/sizes';
@@ -50,6 +51,9 @@ import LinearDemo from './demos/progression/linear';
 import LinkDemo from './demos/Links/linkdemo';
 import SimpleList from './demos/lists/listdemo-1';
 import SimpleListItem from './demos/lists/listitem-1';
+import AvatarList from './demos/lists/list-tem-avatar';
+import ListItemIconDemo from './demos/lists/list-item-icon';
+import CheckboxListSecondary from './demos/lists/list-itm-secondary-action';
 import 'typeface-roboto';
 import './app.scss';
 
@@ -84,6 +88,9 @@ const styles = () => ({
 
 const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 	<div className={main}>
+		<CheckboxListSecondary />
+		<ListItemIconDemo/>
+		<AvatarList />
 		<div>
 			<SimpleListItem />
 		</div>
@@ -157,6 +164,7 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		<div className={main}>
 			<ImageGridList />
 		</div>
+		<TitleGridList />
 		<div className={main}>
 		<GrowDemo/>
 		<BPHelperHook/>

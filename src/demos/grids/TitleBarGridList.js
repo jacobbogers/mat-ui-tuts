@@ -50,8 +50,9 @@ function TitlebarGridList(props) {
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
+          <ListSubheader disableSticky={false} component="div">December</ListSubheader>
         </GridListTile>
+        <ListSubheader disableSticky={false} component="div">December2</ListSubheader>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
