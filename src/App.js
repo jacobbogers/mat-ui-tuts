@@ -54,6 +54,8 @@ import SimpleListItem from './demos/lists/listitem-1';
 import AvatarList from './demos/lists/list-tem-avatar';
 import ListItemIconDemo from './demos/lists/list-item-icon';
 import CheckboxListSecondary from './demos/lists/list-itm-secondary-action';
+import SimpleMenu from './demos/menu/simpleMenu';
+import LongMenu from './demos/menu/long-menu';
 import 'typeface-roboto';
 import './app.scss';
 
@@ -88,8 +90,10 @@ const styles = () => ({
 
 const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 	<div className={main}>
+		<LongMenu />
+		<SimpleMenu />
 		<CheckboxListSecondary />
-		<ListItemIconDemo/>
+		<ListItemIconDemo />
 		<AvatarList />
 		<div>
 			<SimpleListItem />
@@ -98,8 +102,8 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 			<SimpleList />
 		</div>
 		<LinkDemo />
-		<LinearDemo/>
-		<InputDemo/>
+		<LinearDemo />
+		<InputDemo />
 		{/*<InputLabel />
 		<InputBaseWithAdornment/>
 		<InputBaseTest />*/}
@@ -166,11 +170,11 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		</div>
 		<TitleGridList />
 		<div className={main}>
-		<GrowDemo/>
-		<BPHelperHook/>
-		<BPSizesHOC/>
-		<ThemeHook />
-		<HiddenHooks/>
+			<GrowDemo />
+			<BPHelperHook />
+			<BPSizesHOC />
+			<ThemeHook />
+			<HiddenHooks />
 		</div>
 		{/*
 	<!-- root -->*/}
