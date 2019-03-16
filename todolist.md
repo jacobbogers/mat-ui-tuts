@@ -86,25 +86,25 @@
 | StepIcon                | A    |                                             |
 | StepLabel               | A    |                                             |
 | Stepper                 | A    |                                             |
-| SvgIcon                 |      |                                             |
-| SwipeableDrawer         | A    |                                             |
-| Switch                  |      |                                             |
-| Tab                     |      |                                             |
-| Table                   |      |                                             |
-| TableBody               |      |                                             |
-| TableCell               |      |                                             |
-| TableFooter             |      |                                             |
-| TableHead               |      |                                             |
-| TablePagination         |      |                                             |
-| TableRow                |      |                                             |
-| TableSortLabel          |      |                                             |
-| Tabs                    |      |                                             |
-| TextField               |      |                                             |
-| Toolbar                 |      |                                             |
-| Tooltip                 |      |                                             |
-| TouchRipple             |      |                                             |
-| Typography              |      |                                             |
-| Zoo                     |      |                                             |
+| SvgIcon                 | A    |                                             |
+| SwipeableDrawer         | A    | drawer stuff                                |
+| Switch                  | A    | pimped up checkboxes                        |
+| Tab                     | A    | tabbing without the tabpanes (buttons only) |
+| Table                   | A    | not impressed, but ok                       |
+| TableBody               | A    |                                             |
+| TableCell               | A    |                                             |
+| TableFooter             | A    |                                             |
+| TableHead               | A    |                                             |
+| TablePagination         | A    |                                             |
+| TableRow                | A    |                                             |
+| TableSortLabel          | A    |                                             |
+| Tabs                    | A    |                                             |
+| TextField               | A    |                                             |
+| Toolbar                 | A    |                                             |
+| Tooltip                 | A    |                                             |
+| TouchRipple             | ?    |                                             |
+| Typography              | A    |                                             |
+| Zoom                    | A    | transition like Fade, Grow, Slide,etc       |
 
 ```html
 <style>
@@ -248,6 +248,13 @@ Name speaks for itself i think
 ##### `theme.breakpoints.up(key) => media query`
 
 This gives something like
+
+#### nice libraries
+
+Look at these 
+- npm 'react-swipeable-views'
+- npm 'react-swipeable-views-utils'
+
 
 
 
