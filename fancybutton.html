@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .background {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      margin: 50px auto;
+      background-color: bisque;
+      /* overflow: hidden; */
+      border-radius: 4px;
+      box-shadow: 0 0 3px 3px rgb(128, 128, 128);
+    }
+    .mask-l {
+      position: absolute;
+      transform: translate(180%, 0%);
+      width: 35px;
+      height: 35px;
+      border-radius: 0 0 0 35px;
+      background-color: white;
+      box-shadow: inset 3px -3px 3px 3px rgb(128, 128, 128);
+      /* pointer-events: none; */
+    }
+    .mask-r {
+      position: absolute;
+      transform: translate(280%, 0%);
+      width: 35px;
+      height: 35px;
+      border-radius: 0 0 35px 0;
+      background-color: white;
+      box-shadow: inset -3px -3px 3px 3px rgb(128, 128, 128);
+      /* pointer-events: none; */
+    }
+    .button {
+      position: absolute;
+      background-color: bisque;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      transform: translate(119%, -50%);
+      box-shadow: 0 0 3px 3px rgb(128, 128, 128);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="background">
+      <div class="mask-l"></div>
+      <div class="mask-r"></div>
+      <div class="button" onClick="alert('click!');"></div>
+    </div>
+  </div>
+</body>
+</html>
