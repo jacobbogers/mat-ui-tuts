@@ -14,7 +14,7 @@ function bleedIncommingMessage (incMsg, encoding) {
 	});
 }
 
-const server = http.createServer( async (incMsg, servResp, next) => {
+const server = http.createServer( async (incMsg, servResp) => {
 	const url = incMsg.url;
 	const rawHeaders = incMsg.rawHeaders;
 	const method = incMsg.method;
@@ -27,7 +27,6 @@ const server = http.createServer( async (incMsg, servResp, next) => {
 	});
     servResp.end();
     console.log('message received [', message,']')
-    console.log('next:',!!next, String(next));
 });
 
 const port = 8082
