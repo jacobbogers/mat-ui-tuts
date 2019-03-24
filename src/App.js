@@ -1,5 +1,5 @@
 // 3rd party
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -58,6 +58,7 @@ import SimpleMenu from './demos/menu/simpleMenu';
 import LongMenu from './demos/menu/long-menu';
 import 'typeface-roboto';
 import './app.scss';
+import { scheduler, createMatrixA, createMatrixB, createMatrixC } from './sgemm-test';
 
 //import 'material-icons';
 
@@ -88,7 +89,15 @@ const styles = () => ({
 	}
 });
 
-const App = withStyles(styles)(({ classes: { main, main2 } }) => (
+const App = withStyles(styles)(({ classes: { main, main2 } }) => {
+
+	useEffect(()=>{
+		scheduler([createMatrixA, createMatrixB, createMatrixC], { matrixSize: 4096 * 4096 }).then(data => {
+			console.log(data);
+		});
+	})	
+
+    return (
 	<div className={main}>
 		<LongMenu />
 		<SimpleMenu />
@@ -178,7 +187,9 @@ const App = withStyles(styles)(({ classes: { main, main2 } }) => (
 		</div>
 		{/*
 	<!-- root -->*/}
-	</div>
-));
+	</div>);
+});
+
+
 
 ReactDOM.render(<App />, document.querySelector('#app'));
