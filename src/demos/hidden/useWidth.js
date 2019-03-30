@@ -11,7 +11,7 @@ export function useWidth(theme) {
 		obj.mql = window.matchMedia(obj.only);
 		obj.listener = function(e) {
 			this.matched = e.matches;
-			if (e.matches){
+			if (e.matches) {
                fn ({ width: this.name, media: this.only});
 			}
 		}.bind(obj);
@@ -19,6 +19,7 @@ export function useWidth(theme) {
 			this.mql.removeListener( this.listener );
 		}.bind(obj);
 		obj.mql.addListener( obj.listener );
+		console.log(`size:${propName}:${obj.only}`);
 		if (obj.mql.matches && info.width !== obj.name) {
             fn ({ width: obj.name, media: obj.only});
 		}
