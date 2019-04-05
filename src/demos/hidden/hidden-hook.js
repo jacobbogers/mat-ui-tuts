@@ -32,7 +32,7 @@ function Hiddens() {
 
 	return (
 		<div className={classes.root}>
-			<Typography variant="subtitle1">Current width:{info.width}/{info.media} </Typography>
+			<Typography variant="subtitle1">Current width:{info.width}/{info.media}</Typography>
 			<div className={classes.container}>
 				<Hidden xsDown={true}>
 					<Paper className={classes.paper}>xsDown</Paper>

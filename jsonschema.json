@@ -3,8 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "mq-fragments": {
         "$comment": "these are 'atomic' types used to configure rabbitmq objects (exchanges and queues)",
-        "rabbit-mq-binding": {
-            
+        "rabbit-mq-binding": {  
         },
         "rabbit-queue-bindings": {
             "$id": "rabbit-queue-bindings",

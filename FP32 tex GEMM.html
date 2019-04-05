@@ -1,0 +1,136 @@
+
+<!-- saved from url=(0056)https://www.ibiblio.org/e-notes/webgl/gpu/mul/mul32b.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>FP32 tex GEMM</title>
+
+<script type="text/javascript">
+const VSs = `#version 300 es
+ layout (location = 0) in vec2 aPos;
+void main(void) {
+  gl_Position = vec4(aPos, 0., 1.);
+}
+`;
+
+const FSs = `#version 300 es
+precision highp float;
+  uniform highp sampler2D samp0;
+  uniform highp sampler2D samp1;
+  out float fragColor;
+  uniform int N;
+void main(void) {
+  float acc = 0.;
+  for(int i=0; i<N; i++)
+    acc += texelFetch(samp0, ivec2(gl_FragCoord.x, i), 0).r * 
+           texelFetch(samp1, ivec2(i, gl_FragCoord.y), 0).r;
+  fragColor = acc;
+}
+`;
+
+function createShader(gl, type, source){
+   var shader = gl.createShader(type);
+   gl.shaderSource(shader, source);
+   gl.compileShader(shader);
+   if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) return shader;
+   console.log(gl.getShaderInfoLog(shader));
+   gl.deleteShader(shader);
+}
+
+var gl, N = 1024, it = 1, max = 4096, nLoc
+var A = new Float32Array(max*max), B = new Float32Array(max*max),
+    C = new Float32Array(1)
+function main() {
+   var c = document.getElementById("c")
+   try { gl = c.getContext("webgl2")
+   } catch(e) {}
+   if ( !gl ) {alert("Can't get WebGL 2"); return}
+   var ext
+   try {
+     ext = gl.getExtension("EXT_color_buffer_float");
+   } catch(e) {}
+   if ( !ext ) {alert(err + "EXT_color_buffer_float"); return;}
+
+   var prog  = gl.createProgram()
+   gl.attachShader(prog, createShader( gl, gl.VERTEX_SHADER, VSs))
+   gl.attachShader(prog, createShader( gl, gl.FRAGMENT_SHADER, FSs))
+   gl.linkProgram(prog)
+   gl.useProgram(prog)
+
+   var aPosLoc = 0
+   gl.enableVertexAttribArray( aPosLoc )
+   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer())
+   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]),
+     gl.STATIC_DRAW)
+   gl.vertexAttribPointer(aPosLoc, 2, gl.FLOAT, gl.FALSE, 0, 0)
+   var sampLoc  = gl.getUniformLocation(prog, "samp1")
+   gl.uniform1i(sampLoc, 1)
+   nLoc = gl.getUniformLocation(prog, "N")
+
+   for(i=0; i<max*max; i++){ A[i] = Math.random();  B[i] = Math.random()}
+   var tex0 = createTex(gl.TEXTURE0, A)
+   var tex1 = createTex(gl.TEXTURE1, B)
+   var tex2 = createTex(gl.TEXTURE2, B)
+
+   FBO = gl.createFramebuffer()
+   gl.bindFramebuffer(gl.FRAMEBUFFER, FBO)
+   gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0,
+       gl.TEXTURE_2D, tex2, 0)
+   if( gl.checkFramebufferStatus(gl.FRAMEBUFFER) != gl.FRAMEBUFFER_COMPLETE)
+     alert("FBO is not complete")
+   run()
+
+ function createTex(active, data){
+   var tex = gl.createTexture()
+   gl.activeTexture(active)
+   gl.bindTexture(gl.TEXTURE_2D, tex)
+   gl.texStorage2D(gl.TEXTURE_2D, 1, gl.R32F, max,max)
+   gl.texSubImage2D(gl.TEXTURE_2D, 0, 0,0, max,max, gl.RED, gl.FLOAT, data)
+   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)
+   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST)
+   return tex
+ }
+}
+function run(){
+   gl.viewport(0, 0, N, N)
+   gl.uniform1i(nLoc, N)
+   var ti0 = performance.now()
+   for(var i = 0; i < it; i++) gl.drawArrays(gl.TRIANGLE_STRIP, 0,4)
+
+  let acc = 0, m = Math.floor(N*Math.random()), n = Math.floor(N*Math.random())
+  gl.readPixels(m,n, 1,1, gl.RED, gl.FLOAT, C)
+  for(let k=0; k<N; k++) acc += A[k*max + m] * B[n*max + k];
+  var ti = performance.now()
+  document.getElementById('output').innerText = "N = " + N +
+    " time = " + Math.round(10*(ti - ti0))/10 +
+    "ms GFLOPS=" + Math.round(N*N*N*it/(ti - ti0)/10000)/100 +
+    "\n C["+n+", "+m+"] = " + C[0] + " " + acc
+}
+</script>
+<style type="text/css">
+  H1{ font-size: 120%; color: green}
+  H2{ font-size: 100%; color: green}
+</style>
+</head>
+<body onload="main()" cz-shortcut-listen="true">
+<h1>Matrix multiplication with FLOAT textures benchmark</h1>
+
+WebGL2 based NxN matrix multiplication C = A x B
+<a href="https://www.ibiblio.org/e-notes/webgl/gpu/mul/mul32.htm">demo with FLOAT textures</a> benchmark.
+Fixed random A, B 4096x4096 buffers are used for calculations,
+therefore You can set new N value (up to N=4096).
+it - number of iterations. FLOPS = N<sup>3</sup>it / time.
+Two random C<sub>GPU</sub> and C<sub>CPU</sub> are shown.
+
+<p></p><div id="output">N = 1024 time = 111.2ms GFLOPS=9.66<br> C[829, 645] = 251.15872192382812 251.15889312102476</div>
+<input type="button" onclick="run()" value="Run" size="1">
+N=<input size="3" value="1024" onchange="N=parseInt(this.value); run()">
+it=<input size="2" value="1" onchange="it=parseInt(this.value); run()">
+<br><canvas id="c" width="1" height="1"></canvas>
+
+<p>GeForce GT 710 &#8195; &#8195; 2.5 GFLOPS (N=2048).
+<br>Intel Atom Z3735F &#8195; 0.39 GFLOPS (N=1024).
+
+</p><hr><a href="https://www.ibiblio.org/e-notes/webgl/gpu/mul/sgemm.htm">SGEMM in WebGL2-compute</a>
+&nbsp; &nbsp; <i>updated</i> 26 Mar 2019
+
+
+</body></html>
